@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Preload from './preload/Preload';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Preload/>
   </React.StrictMode>,
   document.getElementById('root')
 );
