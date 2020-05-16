@@ -7,6 +7,13 @@
     -moz-column-gap:      0px;
     column-count:         5;
     column-gap:           0px;  
+
+    animation-name: preload-img-container;
+    animation-duration: 1.5s;
+    animation-delay: 2.7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear; 
+   
 }
 
 .image{
@@ -41,4 +48,45 @@
     -webkit-column-count: 1;
     column-count:         1;
     }
+  }
+
+
+
+
+  /*-----------------------------------------------------------*/
+
+  .side_nav{
+      height: 100%;
+      width: 100px;
+      background-color: red;
+      position: fixed;
+      animation-name: preload-hide-animation;
+      animation-duration: 1.5s;
+      animation-delay: 2.7s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear; 
+  }
+
+@keyframes preload-hide-animation {
+
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100px;
+  }
+
+}
+
+@keyframes preload-img-container {
+
+    0% {
+      margin-left: 0;
+    }
+  
+    100% {
+      margin-left: 100px;
+    }
+  
   }
