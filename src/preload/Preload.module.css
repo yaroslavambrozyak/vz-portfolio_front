@@ -10,6 +10,7 @@
     animation-delay: 2.7s;
     animation-fill-mode: forwards;
     animation-timing-function: linear; 
+    z-index: 999;
 }
 
 .preload_logo{
