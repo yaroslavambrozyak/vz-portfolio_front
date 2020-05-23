@@ -49,42 +49,14 @@
     }
   }
 
-
-
-
-  /*-----------------------------------------------------------*/
-
-  .side_nav{
-      height: 100%;
-      width: 100px;
-      background-color: red;
-      position: fixed;
-      animation-name: preload-hide-animation;
-      animation-duration: 1.5s;
-      animation-fill-mode: forwards;
-      animation-timing-function: linear; 
-  }
-
-@keyframes preload-hide-animation {
-
-  0% {
-    width: 0;
-  }
-
-  100% {
-    width: 100px;
-  }
-
-}
-
-@keyframes preload-img-container {
+  @keyframes preload-img-container {
 
     0% {
       margin-left: 0;
     }
   
     100% {
-      margin-left: 100px;
+      margin-left: 58px;
     }
   
   }

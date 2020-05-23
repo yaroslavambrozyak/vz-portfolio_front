@@ -22,13 +22,8 @@ class PreloadContainer extends React.Component {
     startLogoTimeOut = () => {
 
         setTimeout(() => {
-            this.setState({
-                style: {
-                    overflowY: 'vissible',
-                    height: 'auto'
-                }    
-            });
             this.preloadLogoRef.current.hideLogo();
+            this.setState({style: { height: 'auto'} });
         }, 2500);
     }
 
