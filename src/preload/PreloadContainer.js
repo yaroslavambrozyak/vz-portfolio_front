@@ -7,15 +7,27 @@ class PreloadContainer extends React.Component {
     constructor(props) {
         super(props);
         this.preloadLogoRef = React.createRef();
+        this.state = {
+            style: {
+                overflowY: 'hidden',
+                height: 0
+            }
+        }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.startLogoTimeOut()
     }
 
     startLogoTimeOut = () => {
 
         setTimeout(() => {
+            this.setState({
+                style: {
+                    overflowY: 'vissible',
+                    height: 'auto'
+                }    
+            });
             this.preloadLogoRef.current.hideLogo();
         }, 2500);
     }
@@ -23,7 +35,7 @@ class PreloadContainer extends React.Component {
 
     render() {
         return (
-            <div >
+            <div style={this.state.style} >
                 <Preload ref={this.preloadLogoRef} />
                 <Portfolio />
             </div>
