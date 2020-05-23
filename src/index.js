@@ -1,18 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Preload from './preload/Preload';
-import Portfolio from './portfolio/Portfolio'
-import { Switch, Route, Router, BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-        <Route exact path='/' component={Preload}/>
-        <Route path='/portfolio' component={Portfolio}/>
-    </BrowserRouter>
+      <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
