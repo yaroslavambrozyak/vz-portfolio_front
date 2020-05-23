@@ -10,7 +10,6 @@
 
     animation-name: preload-img-container;
     animation-duration: 1.5s;
-    animation-delay: 2.7s;
     animation-fill-mode: forwards;
     animation-timing-function: linear; 
    
@@ -62,7 +61,6 @@
       position: fixed;
       animation-name: preload-hide-animation;
       animation-duration: 1.5s;
-      animation-delay: 2.7s;
       animation-fill-mode: forwards;
       animation-timing-function: linear; 
   }

@@ -5,11 +5,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Preload from './preload/Preload';
 import Portfolio from './portfolio/Portfolio'
+import { Switch, Route, Router, BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Preload/>
-    <Portfolio/>
+    <BrowserRouter>
+        <Route exact path='/' component={Preload}/>
+        <Route path='/portfolio' component={Portfolio}/>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
