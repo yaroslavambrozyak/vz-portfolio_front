@@ -10,7 +10,7 @@
       animation-timing-function: linear;     
   }
 
-  .nav_menu_button{
+  .side_nav_button{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,7 +18,7 @@
     cursor: pointer;
   }
 
-  .side_nav_full{
+  .side_nav_extended{
     height: 100%;
     position: fixed;
     top: 0;
@@ -29,13 +29,24 @@
     overflow-x: hidden;
   }
 
-  .side_nav_full_open{
+  .side_nav_extended_opened{
     width: 200px;
   }
 
-  .scroll_top_link{
+  .side_nav_scroll_top_button{
     position: absolute;
-    bottom : 0;
+    bottom : 5%;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(-135deg);
+    left: 40%;
+    cursor: pointer;
+  }
+
+  .side_nav__logo{
+  width: 100%;  
   }
 }
 
@@ -50,7 +61,7 @@
       animation-timing-function: linear;     
   }
 
-  .nav_menu_button{
+  .side_nav_button{
     position: absolute;
     top: 50%;
     right: 5%;
@@ -58,7 +69,7 @@
     cursor: pointer;
   }
 
-  .side_nav_full{
+  .side_nav_extended{
     width: 100%;
     position: fixed;
     top: 58px;
@@ -70,19 +81,19 @@
     overflow-y: hidden;
   }
 
-  .side_nav_full_open{
+  .side_nav_extended_opened{
     transform: scaleY(1);
   }
 
-  .logo{
+  .side_nav__logo{
     display: none;
   }
 
-  .nav_menu_button_text{
+  .side_nav_button__text{
     display: none;
   }
 
-  .scroll_top_link{
+  .side_nav_scroll_top_button{
     display: none;
   }
 
@@ -102,22 +113,12 @@
 
 }
 
-/*******************/
-.logo{
-  width: 100%;  
-}
 
-.nav_menu_button_text{
+.side_nav_button__text{
   margin-right:15px;
 }
 
-
-
-
-
-
-
-.side_nav_full_link{
+.side_nav_extended__nav_link{
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
