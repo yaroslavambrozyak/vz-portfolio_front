@@ -3,6 +3,13 @@
   position: fixed;
 }
 
+.side_nav_animated{
+    animation-name: side_nav_preload_animation;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;   
+}
+
 .side_nav_button{
   position: absolute;
   cursor: pointer;
@@ -46,12 +53,8 @@
 @media (min-width: 769px) {
     .side_nav{
       height: 100%;
-      width: 58px;
-      animation-name: side_nav_preload_animation;
-      animation-duration: 1.5s;
-      animation-fill-mode: forwards;
-      animation-timing-function: linear;     
-  }
+      width: 58px;  
+    }
 
   .side_nav_button{
     top: 50%;
