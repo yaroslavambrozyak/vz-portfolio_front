@@ -1,15 +1,94 @@
-.side_nav{
+@media (min-width: 769px) {
+    .side_nav{
+      height: 100%;
+      width: 58px;
+      background-color: white;
+      position: fixed;
+      animation-name: preload-animation;
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;     
+  }
+
+  .nav_menu_button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(270deg);
+    cursor: pointer;
+  }
+
+  .side_nav_full{
     height: 100%;
-    width: 58px;
-    background-color: white;
     position: fixed;
-    animation-name: preload-animation;
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear; 
-    
-    
+    top: 0;
+    left: 58px;
+    background-color: white;
+    transition:0.5s;
+    width: 0;
+    overflow-x: hidden;
+  }
+
+  .side_nav_full_open{
+    width: 200px;
+  }
+
+  .scroll_top_link{
+    position: absolute;
+    bottom : 0;
+  }
 }
+
+@media (max-width: 768px){
+    .side_nav{
+      height: 58px;
+      width: 100%;
+      background-color: white;
+      position: fixed;
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+      animation-timing-function: linear;     
+  }
+
+  .nav_menu_button{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .side_nav_full{
+    width: 100%;
+    position: fixed;
+    top: 58px;
+    left: 0;
+    transform-origin: top;
+    transform: scaleY(0);
+    background-color: white;
+    transition:0.5s;
+    overflow-y: hidden;
+  }
+
+  .side_nav_full_open{
+    transform: scaleY(1);
+  }
+
+  .logo{
+    display: none;
+  }
+
+  .nav_menu_button_text{
+    display: none;
+  }
+
+  .scroll_top_link{
+    display: none;
+  }
+
+}
+
+
 
 @keyframes preload-animation {
 
@@ -28,33 +107,15 @@
   width: 100%;  
 }
 
-.nav_menu_button{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(270deg);
-  cursor: pointer;
+.nav_menu_button_text{
+  margin-right:15px;
 }
 
-.scroll_top_link{
-  position: absolute;
-  bottom : 0;
-}
 
-.side_nav_full{
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 58px;
-  background-color: white;
-  transition:0.5s;
-  width: 0;
-  overflow-x: hidden;
-}
 
-.side_nav_full_open{
-  width: 200px;
-}
+
+
+
 
 .side_nav_full_link{
   padding: 8px 8px 8px 32px;

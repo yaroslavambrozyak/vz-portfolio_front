@@ -6,13 +6,16 @@
     -moz-column-count:    5;
     -moz-column-gap:      0px;
     column-count:         5;
-    column-gap:           0px;  
+    column-gap:           0px;     
+}
 
+@media (min-width: 769px){
+  .main_container{
     animation-name: preload-img-container;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
-    animation-timing-function: linear; 
-   
+    animation-timing-function: linear;
+  }
 }
 
 .image{

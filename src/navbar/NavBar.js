@@ -23,7 +23,7 @@ class NavBar extends React.Component {
             <div>
                 <div className={Style.side_nav}>
                     <img src={Logo} alt='logo' className={Style.logo} />
-                    <div className={Style.nav_menu_button} onClick={()=>this.openSideNav()} ><span style={{marginRight:15}}>Menu</span>&#9776;</div>
+                    <div className={Style.nav_menu_button} onClick={()=>this.openSideNav()} ><span className={Style.nav_menu_button_text}>Menu</span>&#9776;</div>
                     <div className={Style.scroll_top_link} onClick={() => window.scrollTo(0, 0)}>top</div>
                 </div>
                 <div className={Style.side_nav_full + ' ' + (this.state.navOpened ? Style.side_nav_full_open: '')}>
