@@ -51,18 +51,21 @@ class NavBar extends React.Component {
                     <span className={Style.side_nav_scroll_top_button} onClick={this.scrollToTop}></span>
                 </div>
                 <div className={Style.side_nav_extended + ' ' + (this.state.navOpened ? Style.side_nav_extended_opened : '')}>
-                    <div className={Style.side_nav_extended__logo}>VLAD ZVARUN</div>
-                    <div className={Style.side_nav_extended_nav}>
-                        <NavLink className={Style.side_nav_extended_nav__link} to=''>PORTFOLIO</NavLink>
-                        <NavLink className={Style.side_nav_extended_nav__link} to='/hello'>GRAPHIC DESIGN</NavLink>
-                        <NavLink className={Style.side_nav_extended_nav__link} to='/hello'>OTHER</NavLink>
-                        <NavLink className={Style.side_nav_extended_nav__link} to='/hello'>RESUME</NavLink>
-                    </div>
-                    <div className={Style.side_nav_extended_social_icons}>
-                        <a className={Style.side_nav_extended_social_icons__icon} href='mailto:vladzvarun@icloud.com'><MailIcon /></a>
-                        <a className={Style.side_nav_extended_social_icons__icon} href='https://www.facebook.com/profile.php?id=100007529322700'><FaceBookIcon /></a>
-                        <a className={Style.side_nav_extended_social_icons__icon} href='https://www.instagram.com/zvarunchik/'><InstagramIcon /></a>
-                        <a className={Style.side_nav_extended_social_icons__icon} href='https://www.artstation.com/vladzvarun'><ArtStationIcon /></a>
+                    <div className={Style.side_nav_extended_content_wrapper + ' ' +
+                        (this.state.navOpened ? Style.side_nav_extended_fade_in_animated : Style.side_nav_extended_fade_out_animated)}>
+                        <div className={Style.side_nav_extended__logo}>VLAD ZVARUN</div>
+                        <div className={Style.side_nav_extended_nav}>
+                            <NavLink className={Style.side_nav_extended_nav__link} to=''>PORTFOLIO</NavLink>
+                            <NavLink className={Style.side_nav_extended_nav__link} to='/hello'>GRAPHIC DESIGN</NavLink>
+                            <NavLink className={Style.side_nav_extended_nav__link} to='/hello'>OTHER</NavLink>
+                            <NavLink className={Style.side_nav_extended_nav__link} to='/hello'>RESUME</NavLink>
+                        </div>
+                        <div className={Style.side_nav_extended_social_icons}>
+                            <a className={Style.side_nav_extended_social_icons__icon} href='mailto:vladzvarun@icloud.com'><MailIcon /></a>
+                            <a className={Style.side_nav_extended_social_icons__icon} href='https://www.facebook.com/profile.php?id=100007529322700'><FaceBookIcon /></a>
+                            <a className={Style.side_nav_extended_social_icons__icon} href='https://www.instagram.com/zvarunchik/'><InstagramIcon /></a>
+                            <a className={Style.side_nav_extended_social_icons__icon} href='https://www.artstation.com/vladzvarun'><ArtStationIcon /></a>
+                        </div>
                     </div>
                 </div>
             </div>

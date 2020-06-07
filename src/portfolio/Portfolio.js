@@ -14,7 +14,7 @@ class Portfolio extends React.Component {
     }
 
     componentDidMount() {
-
+        this.preloadAnimationDisabler();
     };
 
     preloadAnimationDisabler() {

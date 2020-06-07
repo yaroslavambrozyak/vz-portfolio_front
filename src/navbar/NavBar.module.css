@@ -18,10 +18,15 @@
 .side_nav_extended{
   position: fixed;
   background-color: white;
+}
+
+.side_nav_extended_content_wrapper{
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
+  height: 100%;
+  width: 100%;
 }
 
 .side_nav_scroll_top_button{
@@ -137,7 +142,19 @@
 
 }
 
+.side_nav_extended_fade_in_animated{
+  animation-name: side_nav_extended_fade_in_animation;
+  animation-duration: .7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear; 
+}
 
+.side_nav_extended_fade_out_animated{
+  animation-name: side_nav_extended_fade_out_animation;
+  animation-duration: .7s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear; 
+}
 
 @keyframes side_nav_preload_animation {
 
@@ -149,4 +166,28 @@
     width: 58px;
   }
 
+}
+
+@keyframes side_nav_extended_fade_in_animation{
+  0%{
+    opacity: 0;
+  }
+
+  95%{
+    opacity: 1;
+  }
+}
+
+@keyframes side_nav_extended_fade_out_animation{
+  0%{
+    opacity: 1;
+  }
+
+  20%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 0;
+  }
 }
