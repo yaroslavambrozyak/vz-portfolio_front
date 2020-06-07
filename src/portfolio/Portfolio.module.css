@@ -8,12 +8,11 @@
     column-count:         5;
     column-gap:           0px;    
     
-    padding-left: 58px;
-    transition: filter .5s linear;
+    transition: filter .7s linear;
 }
 
 .main_container_disabled{
-  filter: grayscale(0.5) blur(2px);
+  filter: grayscale(0.9) blur(2px) opacity(0.7);
 }
 
 @media (min-width: 769px){
@@ -28,6 +27,12 @@
 .image{
     width: 100% !important;
     height: auto !important;
+}
+
+@media (min-width: 769px){
+  .main_container{
+    padding-left: 58px;
+  }
 }
 
 @media (max-width: 1200px) {
