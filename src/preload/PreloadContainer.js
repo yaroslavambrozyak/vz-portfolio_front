@@ -29,10 +29,11 @@ class PreloadContainer extends React.Component {
 
 
     render() {
+
         return (
             <div style={this.state.style} >
                 <Preload ref={this.preloadLogoRef} />
-                <Portfolio />
+                <Portfolio/>
             </div>
         )
     }

@@ -27,6 +27,7 @@ class NavBar extends React.Component {
         this.setState(prevState => ({
             navOpened: !prevState.navOpened
         }));
+        this.props.onNavBarOpened();
     };
 
     scrollToTop = () => {

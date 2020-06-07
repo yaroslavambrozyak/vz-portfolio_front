@@ -8,7 +8,12 @@
     column-count:         5;
     column-gap:           0px;    
     
-    margin-left: 58px;
+    padding-left: 58px;
+    transition: filter .5s linear;
+}
+
+.main_container_disabled{
+  filter: grayscale(0.5) blur(2px);
 }
 
 @media (min-width: 769px){
@@ -57,11 +62,11 @@
   @keyframes preload-img-container {
 
     0% {
-      margin-left: 0;
+      padding-left: 0;
     }
   
     100% {
-      margin-left: 58px;
+      padding-left: 58px;
     }
   
   }
