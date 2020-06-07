@@ -38,10 +38,11 @@ class NavBar extends React.Component {
     }
 
     render() {
+
         return (
             <div>
                 <div className={Style.side_nav + ' ' +
-                    ((this.state.innerWidth > 769 && !this.state.preloadFinished) ? Style.side_nav_animated : '')}>
+                    ((this.state.windowWidth > 769 && !this.state.preloadFinished) ? Style.side_nav_animated : '')}>
                     <img src={Logo} alt='logo' className={Style.side_nav__logo} />
                     <div className={Style.side_nav_button} onClick={this.openSideNav} >
                         <span className={Style.side_nav_button__text}>Menu</span>

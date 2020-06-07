@@ -10,7 +10,7 @@
 }
 
 @media (min-width: 769px){
-  .main_container{
+  .main_container_preload_animation{
     animation-name: preload-img-container;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
