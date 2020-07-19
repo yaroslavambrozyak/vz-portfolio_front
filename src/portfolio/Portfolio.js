@@ -27,7 +27,7 @@ class Portfolio extends React.Component {
             this.setState(prevState => ({
                 disabled: !prevState.disabled
             }));
-        }, 350);
+        }, 425);
     }
 
 

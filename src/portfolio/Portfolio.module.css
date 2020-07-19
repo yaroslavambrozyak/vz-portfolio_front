@@ -8,7 +8,7 @@
     column-count:         5;
     column-gap:           0px;    
     
-    transition: filter .7s linear;
+    transition: filter .5s linear;
 }
 
 .main_container_disabled{
