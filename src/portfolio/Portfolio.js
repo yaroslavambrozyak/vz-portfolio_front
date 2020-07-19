@@ -39,7 +39,7 @@ class Portfolio extends React.Component {
                     (window.innerWidth > 769 && !this.state.preloadFinished) ? style.main_container_preload_animation : '')+ ' ' +
                     (window.innerWidth >769 && this.state.disabled? style.main_container_disabled: '')}>
                     <Art imageUrl='https://cdnb.artstation.com/p/assets/images/images/018/622/041/large/vlx-zvarun-study-5s.jpg?1560092935'
-                    title='Hello bob' link='https://google.com'/>
+                    title='Hello bob' link='/art'/>
                     <Art imageUrl='https://cdnb.artstation.com/p/assets/images/images/019/215/045/large/vlx-zvarun-study-2.jpg?1562539028'
                     title='Hello bob' link='https://google.com'/>
                     <Art imageUrl='https://cdna.artstation.com/p/assets/images/images/018/762/520/large/vlx-zvarun-study-6s.jpg?1560620589'

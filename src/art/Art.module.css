@@ -1,0 +1,20 @@
+.art{
+    padding-left: 58px;
+}
+
+.art_slider{
+  
+}
+
+.art_image{
+    max-width: 75vw;
+    max-height: 75vh;
+}
+
+.art_description{
+    width: 35%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
