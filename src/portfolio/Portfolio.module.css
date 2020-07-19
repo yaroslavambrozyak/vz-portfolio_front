@@ -24,11 +24,6 @@
   }
 }
 
-.image{
-    width: 100% !important;
-    height: auto !important;
-}
-
 @media (min-width: 769px){
   .main_container{
     padding-left: 58px;
