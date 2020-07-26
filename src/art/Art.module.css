@@ -1,6 +1,6 @@
 .art{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
 }
 
 .art_image{
@@ -8,10 +8,13 @@
     max-height: 95%;
 }
 
+.art_text{
+    margin-left: auto;
+}
+
 @media (min-width: 769px){
 
     .art_slider{
-        width: 50vw;
         height: 100vh;
         overflow: scroll;
         text-align: center;
