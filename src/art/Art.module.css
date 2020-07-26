@@ -1,20 +1,34 @@
 .art{
-    padding-left: 58px;
-}
-
-.art_slider{
-  
+    display: flex;
+    justify-content: center;
 }
 
 .art_image{
-    max-width: 75vw;
-    max-height: 75vh;
+    max-width: 100%;
+    max-height: 95%;
 }
 
-.art_description{
-    width: 35%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
+@media (min-width: 769px){
+
+    .art_slider{
+        width: 50vw;
+        height: 100vh;
+        overflow: scroll;
+        text-align: center;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+      
+      .art_slider::-webkit-scrollbar {
+          display: none;
+      }
+
 }
+
+
+
+
+  
+
+
+
