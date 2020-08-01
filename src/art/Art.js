@@ -1,9 +1,11 @@
 import React from 'react';
 import style from './Art.module.css';
+import NavBar from '../navbar/NavBar.js'
 
 function Art(props) {
 
     return <div> 
+        <NavBar />
         <div className={style.art}>
             <div className={style.art_navigation + ' ' + style.art_navigation_left}>
                 <div className={style.art_navigation_left + ' ' + style.art_navigation_arrow}>
