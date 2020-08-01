@@ -34,7 +34,7 @@ class Portfolio extends React.Component {
     render() {
         return (
             <div>
-                <NavBar onNavBarOpened={()=>this.disableView()} />
+                <NavBar onNavBarOpened={()=>this.disableView()} preloadAnimationEnabled={true} />
                 <div className={style.main_container + ' ' + (
                     (window.innerWidth > 769 && !this.state.preloadFinished) ? style.main_container_preload_animation : '')+ ' ' +
                     (window.innerWidth >769 && this.state.disabled? style.main_container_disabled: '')}>

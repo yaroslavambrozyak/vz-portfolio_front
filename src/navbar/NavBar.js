@@ -15,7 +15,8 @@ class NavBar extends React.Component {
         this.state = {
             navOpened: false,
             preloadFinished: false,
-            windowWidth: window.innerWidth
+            windowWidth: window.innerWidth,
+            preloadAnimationEnabled: props.preloadAnimationEnabled
         }
     }
 
@@ -27,7 +28,9 @@ class NavBar extends React.Component {
         this.setState(prevState => ({
             navOpened: !prevState.navOpened
         }));
-        this.props.onNavBarOpened();
+        if (this.props.onNavBarOpened !== undefined) {
+            this.props.onNavBarOpened();
+        }
     };
 
     scrollToTop = () => {
@@ -35,7 +38,11 @@ class NavBar extends React.Component {
     };
 
     sideNavAnimationDisabler = () => {
-        setTimeout(() => this.setState({ preloadFinished: true }), 1500);
+        if (this.props.preloadAnimationEnabled) {
+            setTimeout(() => this.setState({ preloadFinished: true }), 1500);
+        } else {
+            this.setState({ preloadFinished: true });
+        }
     }
 
     render() {

@@ -5,7 +5,7 @@ import NavBar from '../navbar/NavBar.js'
 function Art(props) {
 
     return <div> 
-        <NavBar />
+        <NavBar preloadAnimationEnabled={false}/>
         <div className={style.art}>
             <div className={style.art_navigation + ' ' + style.art_navigation_left}>
                 <div className={style.art_navigation_left + ' ' + style.art_navigation_arrow}>
