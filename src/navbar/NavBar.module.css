@@ -53,7 +53,7 @@
 }
 
 .side_nav_extended__logo{
-  left: 270px;
+  left: 275px;
 }
 
 .side_nav_button__text {
@@ -87,6 +87,14 @@
   width: 30px;
 }
 
+.side_nav_extended_close_button{
+  position: absolute;
+  left: 465px;
+  top: 0;
+  font-size: 27px;
+  cursor: pointer;
+}
+
 @media (min-width: 769px) {
   .side_nav {
     height: 100%;
@@ -110,10 +118,6 @@
   }
   .side_nav_extended_opened {
     transform: scaleX(1);
-  }
-  .side_nav_extended_top_container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
   }
   
 }
@@ -146,6 +150,9 @@
     display: none;
   }
   .side_nav_scroll_top_button {
+    display: none;
+  }
+  .side_nav_extended_close_button{
     display: none;
   }
 }
