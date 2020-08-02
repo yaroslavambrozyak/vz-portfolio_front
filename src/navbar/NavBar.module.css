@@ -1,28 +1,28 @@
-.side_nav{
+.side_nav {
   background-color: white;
   position: fixed;
-  z-index: 999;
+  z-index: 2;
 }
 
-.side_nav_animated{
-    animation-name: side_nav_preload_animation;
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;   
+.side_nav_animated {
+  animation-name: side_nav_preload_animation;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 
-.side_nav_button{
+.side_nav_button {
   position: absolute;
   cursor: pointer;
 }
 
-.side_nav_extended{
+.side_nav_extended {
   position: fixed;
   background-color: white;
-  z-index: 999;
+  z-index: 1;
 }
 
-.side_nav_extended_content_wrapper{
+.side_nav_extended_content_wrapper {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -31,9 +31,9 @@
   width: 100%;
 }
 
-.side_nav_scroll_top_button{
+.side_nav_scroll_top_button {
   position: absolute;
-  bottom : 5%;
+  bottom: 5%;
   border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
@@ -43,23 +43,32 @@
   cursor: pointer;
 }
 
-.side_nav__logo{
-  width: 100%;  
-}
-
-.side_nav_button__text{
-  margin-right:15px;
+.side_nav__logo {
+  width: 100%;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  z-index: 4;
+  transition:all 0.5s;
 }
 
 .side_nav_extended__logo{
+  left: 270px;
+}
+
+.side_nav_button__text {
+  margin-right: 15px;
+}
+
+.side_nav_extended__logo {
   text-align: center;
 }
 
-.side_nav_extended_nav{
+.side_nav_extended_nav {
   text-align: center;
 }
 
-.side_nav_extended_nav__link{
+.side_nav_extended_nav__link {
   text-decoration: none;
   font-size: 25px;
   color: black;
@@ -67,30 +76,28 @@
   padding: 15px;
 }
 
-.side_nav_extended_social_icons{
+.side_nav_extended_social_icons {
   display: flex;
   flex-flow: row;
   justify-content: center;
   align-items: center;
 }
 
-.side_nav_extended_social_icons__icon{
+.side_nav_extended_social_icons__icon {
   width: 30px;
 }
 
 @media (min-width: 769px) {
-    .side_nav{
-      height: 100%;
-      width: 58px;  
-    }
-
-  .side_nav_button{
+  .side_nav {
+    height: 100%;
+    width: 58px;
+  }
+  .side_nav_button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(270deg);
   }
-
-  .side_nav_extended{
+  .side_nav_extended {
     height: 100%;
     top: 0;
     left: 58px;
@@ -101,26 +108,27 @@
     transform: scaleX(0);
     transform-origin: 0 100%;
   }
-
-  .side_nav_extended_opened{
+  .side_nav_extended_opened {
     transform: scaleX(1);
+  }
+  .side_nav_extended_top_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
   
 }
 
-@media (max-width: 768px){
-    .side_nav{
-      height: 58px;
-      width: 100%;     
+@media (max-width: 768px) {
+  .side_nav {
+    height: 58px;
+    width: 100%;
   }
-
-  .side_nav_button{
+  .side_nav_button {
     top: 50%;
     right: 5%;
     transform: translateY(-50%);
   }
-
-  .side_nav_extended{
+  .side_nav_extended {
     width: 100%;
     top: 58px;
     left: 0;
@@ -128,71 +136,60 @@
     overflow-x: hidden;
     transition: height 0.5s;
   }
-
-  .side_nav_extended_opened{
+  .side_nav_extended_opened {
     height: calc(100% - 58px);
   }
-
-  .side_nav__logo{
+  .side_nav__logo {
     display: none;
   }
-
-  .side_nav_button__text{
+  .side_nav_button__text {
     display: none;
   }
-
-  .side_nav_scroll_top_button{
+  .side_nav_scroll_top_button {
     display: none;
   }
-
 }
 
-.side_nav_extended_fade_in_animated{
+.side_nav_extended_fade_in_animated {
   animation-name: side_nav_extended_fade_in_animation;
   animation-duration: .7s;
   animation-fill-mode: forwards;
-  animation-timing-function: linear; 
+  animation-timing-function: linear;
 }
 
-.side_nav_extended_fade_out_animated{
+.side_nav_extended_fade_out_animated {
   animation-name: side_nav_extended_fade_out_animation;
   animation-duration: .7s;
   animation-fill-mode: forwards;
-  animation-timing-function: linear; 
+  animation-timing-function: linear;
 }
 
 @keyframes side_nav_preload_animation {
-
   0% {
     width: 0;
   }
-
   100% {
     width: 58px;
   }
-
 }
 
-@keyframes side_nav_extended_fade_in_animation{
-  0%{
+@keyframes side_nav_extended_fade_in_animation {
+  0% {
     opacity: 0;
   }
-
-  95%{
+  95% {
     opacity: 1;
   }
 }
 
-@keyframes side_nav_extended_fade_out_animation{
-  0%{
+@keyframes side_nav_extended_fade_out_animation {
+  0% {
     opacity: 1;
   }
-
-  20%{
+  20% {
     opacity: 0;
   }
-
-  100%{
+  100% {
     opacity: 0;
   }
 }

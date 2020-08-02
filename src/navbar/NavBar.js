@@ -51,7 +51,8 @@ class NavBar extends React.Component {
             <div>
                 <div className={Style.side_nav + ' ' +
                     ((this.state.windowWidth > 769 && !this.state.preloadFinished) ? Style.side_nav_animated : '')}>
-                    <img src={Logo} alt='logo' className={Style.side_nav__logo} />
+                    <img src={Logo} alt='logo' className={Style.side_nav__logo + ' ' + 
+                (this.state.navOpened? Style.side_nav_extended__logo : '')} />
                     <div className={Style.side_nav_button} onClick={this.openSideNav} >
                         <span className={Style.side_nav_button__text}>Menu</span>
                         <span className={Style.side_nav_button__icon}>&#9776;</span>
@@ -61,6 +62,9 @@ class NavBar extends React.Component {
                 <div className={Style.side_nav_extended + ' ' + (this.state.navOpened ? Style.side_nav_extended_opened : '')}>
                     <div className={Style.side_nav_extended_content_wrapper + ' ' +
                         (this.state.navOpened ? Style.side_nav_extended_fade_in_animated : Style.side_nav_extended_fade_out_animated)}>
+                        <div className={Style.side_nav_extended_top_container}>
+                            <span className={Style.side_nav_extended_close_button} onClick={this.openSideNav}>&times;</span>
+                        </div>
                         <div className={Style.side_nav_extended__logo}>VLAD ZVARUN</div>
                         <div className={Style.side_nav_extended_nav}>
                             <NavLink className={Style.side_nav_extended_nav__link} to=''>PORTFOLIO</NavLink>
