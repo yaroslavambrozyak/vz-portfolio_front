@@ -1,7 +1,7 @@
 .side_nav {
   background-color: white;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
 }
 
 .side_nav_animated {
@@ -19,7 +19,7 @@
 .side_nav_extended {
   position: fixed;
   background-color: white;
-  z-index: 1;
+  z-index: 2;
 }
 
 .side_nav_extended_content_wrapper {

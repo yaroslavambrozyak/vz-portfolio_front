@@ -15,6 +15,15 @@
   filter: grayscale(0.9) blur(2px);
 }
 
+.transparent_container{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
 @media (min-width: 769px){
   .main_container_preload_animation{
     animation-name: preload-img-container;
