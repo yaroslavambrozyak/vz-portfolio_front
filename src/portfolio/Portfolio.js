@@ -17,7 +17,6 @@ class Portfolio extends React.Component {
         this.styleDisplayBlock = {
             display: 'block'
         };
-        console.log(props)
         this.arts = props.arts.map(a => <Art imageUrl={a.imageUrl} title={a.title} link={`/art/${a.link}`} />);
     }
 
@@ -40,7 +39,7 @@ class Portfolio extends React.Component {
     render() {
         return (
             <div>
-                <NavBar onNavBarOpened={() => this.disableView()} preloadAnimationEnabled={true} />
+                <NavBar onNavBarOpened={() => this.disableView()}/>
                 <div style={this.state.disabled ? this.styleDisplayBlock : this.styleDisplayNone} className={style.transparent_container}></div>
                 <div className={style.main_container + ' ' + (
                     (window.innerWidth > 769 && !this.state.preloadFinished) ? style.main_container_preload_animation : '') + ' ' +
