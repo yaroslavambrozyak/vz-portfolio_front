@@ -14,6 +14,8 @@ function NavBar(props) {
     let sideNavigationLogoCssClasses = `${Style.side_nav__logo} 
     ${navOpened ? Style.side_nav_extended__logo : ''}`;
 
+    let scrollTopButtonStyle = {display: !navOpened ? 'block' : 'none'};
+
     useEffect(() => {
         navAppearAnimationConfigurator();
     }, []);
@@ -40,7 +42,7 @@ function NavBar(props) {
                 <span className={Style.side_nav_button__text}>Menu</span>
                 <span className={Style.side_nav_button__icon}>&#9776;</span>
             </div>
-            <span className={Style.side_nav_scroll_top_button} onClick={onScrollTopButtonClick}></span>
+            <span style={scrollTopButtonStyle} className={Style.side_nav_scroll_top_button} onClick={onScrollTopButtonClick}></span>
         </div>
         <NavBarExposed exposeNavigation={exposeNavigation} navOpened={navOpened}/>
     </div>
