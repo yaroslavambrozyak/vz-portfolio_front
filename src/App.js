@@ -11,9 +11,11 @@ function App() {
     <div>
       <BrowserRouter>
         <Switch>
-          <Route path='/portfolio' render={()=><Portfolio arts={store.getState().portfolio.arts}/>} />
-          <Route path='/art' component={Art} />
-          <Route path='/' component={WelcomeLogo}/>
+          <Route path='/portfolio' render={() => <Portfolio arts={store.getState().portfolio.arts} />} />
+          <Route path='/art' render={() => <Art art={store.getState().art.art}
+            prev={store.getState().art.prev}
+            next={store.getState().art.next} />} />
+          <Route path='/' component={WelcomeLogo} />
         </Switch>
       </BrowserRouter>
     </div>
