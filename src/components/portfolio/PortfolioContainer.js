@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Portfolio from './Portfolio';
-import { setPortfolioArtsAC, toggleFetchingAC } from './../redux/portfolio-reducer';
-import WelcomeLogo from './../welcome/WelcomeLogo';
+import { setPortfolioArtsAC, toggleFetchingAC } from './../../redux/portfolio-reducer';
+import {finishPreloadLogoAC} from './../../redux/welcome-reducer';
 
 class PortfolioContainer extends React.Component {
 
@@ -12,7 +12,6 @@ class PortfolioContainer extends React.Component {
 
     componentDidMount() {
         this.props.toogleFetchProgressBar(true);
-        let startFetchTime = new Date().getMilliseconds();
         let data = [{
             id: 'Qew23FSAsds',
             title: 'HelloBob',
@@ -29,23 +28,14 @@ class PortfolioContainer extends React.Component {
             imageUrl: 'https://cdnb.artstation.com/p/assets/images/images/028/345/289/large/vlx-zvarun-adam-break.jpg?1594205477'
         }];
         this.props.setPortfolioArts(data);
-        let finishFetch = new Date().getMilliseconds();
-        let delay;
-        if (finishFetch - startFetchTime < 2500) {
-            delay = 2500;
-        }
-        setTimeout(() => {
-            this.props.toogleFetchProgressBar(false);
-        }, delay);
+        this.props.disableFirstLogoPreloader();
     }
 
     render() {
         return <div>
-            
             <Portfolio arts={this.props.arts} setPortfolioArts={this.props.setPortfolioArts} />
         </div>
     }
-//<WelcomeLogo isFetching={this.props.isFetching} />
 }
 
 let mapStateToProps = (state) => {
@@ -58,7 +48,8 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
     return {
         setPortfolioArts: (arts) => dispatch(setPortfolioArtsAC(arts)),
-        toogleFetchProgressBar: (isFetching) => dispatch(toggleFetchingAC(isFetching))
+        toogleFetchProgressBar: (isFetching) => dispatch(toggleFetchingAC(isFetching)),
+        disableFirstLogoPreloader: () => dispatch(finishPreloadLogoAC())
     }
 }
 

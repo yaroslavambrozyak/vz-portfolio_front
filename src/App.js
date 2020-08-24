@@ -3,8 +3,9 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import store from './redux/store';
 import { Provider } from 'react-redux';
-import NavBar from './navbar/NavBar';
+import NavBar from './components/navbar/NavBar';
 import TransitionContainer from './TransitionContainer';
+import WelcomeLogo from './components/welcome/WelcomeLogo';
 
 
 function App() {
@@ -12,8 +13,9 @@ function App() {
     <div>
       <BrowserRouter>
         <Provider store={store}>
+          <WelcomeLogo />
           <NavBar preloadAnimationEnabled={false} />
-          <TransitionContainer/>        
+          <TransitionContainer />
         </Provider>
       </BrowserRouter>
     </div>

@@ -1,28 +1,30 @@
 import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import './App.css';
-import Art from './art/Art';
+import Art from './components/art/Art';
 import store from './redux/store';
-import PortfolioContainer from './portfolio/PortfolioContainer';
+import PortfolioContainer from './components/portfolio/PortfolioContainer';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 
 function TransitionContainer({ location }) {
-    return <Wrapper>
-        <TransitionGroup>
-            <CSSTransition
-                key={location.key}
-                timeout={{ enter: 1500, exit: 1500 }}
-                classNames="fade">
-                <Switch>
-                    <Route path='/art' render={() => <Art art={store.getState().art.art}
-                        prev={store.getState().art.prev}
-                        next={store.getState().art.next} />} />
-                    <Route path={['/portfolio', '/']} render={() => <PortfolioContainer />} />
-                </Switch>
-            </CSSTransition>
-        </TransitionGroup>
-    </Wrapper>
+  return <Wrapper>
+    <TransitionGroup>
+      <CSSTransition
+        key={location.key}
+        timeout={{ enter: 1500, exit: 1500 }}
+        classNames="fade">
+        <section class="route-section">
+          <Switch>
+            <Route path='/art' render={() => <Art art={store.getState().art.art}
+              prev={store.getState().art.prev}
+              next={store.getState().art.next} />} />
+            <Route path={['/portfolio', '/']} render={() => <PortfolioContainer />} />
+          </Switch>
+        </section>
+      </CSSTransition>
+    </TransitionGroup>
+  </Wrapper>
 }
 
 const Wrapper = styled.div`
