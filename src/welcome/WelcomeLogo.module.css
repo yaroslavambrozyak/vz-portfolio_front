@@ -1,7 +1,11 @@
 .welcome_page{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: black;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .welcome_page_logo{
