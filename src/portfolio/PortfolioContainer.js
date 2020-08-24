@@ -31,23 +31,21 @@ class PortfolioContainer extends React.Component {
         this.props.setPortfolioArts(data);
         let finishFetch = new Date().getMilliseconds();
         let delay;
-        if(finishFetch - startFetchTime < 2500){
+        if (finishFetch - startFetchTime < 2500) {
             delay = 2500;
         }
-        setTimeout(()=>{
+        setTimeout(() => {
             this.props.toogleFetchProgressBar(false);
-        },delay);
+        }, delay);
     }
 
     render() {
         return <div>
-            {this.props.isFetching ? 
-            <WelcomeLogo isFetching = {this.props.isFetching}/> :
+            
             <Portfolio arts={this.props.arts} setPortfolioArts={this.props.setPortfolioArts} />
-        }
         </div>
     }
-
+//<WelcomeLogo isFetching={this.props.isFetching} />
 }
 
 let mapStateToProps = (state) => {

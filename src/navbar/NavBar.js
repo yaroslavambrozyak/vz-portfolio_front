@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Style from './NavBar.module.css';
 import Logo from './logo.png';
 import NavBarExposed from './NavBarExposed';
+import { Link } from 'react-router-dom';
 
 function NavBar(props) {
 
@@ -37,7 +38,7 @@ function NavBar(props) {
 
     return <div>
         <div className={sideNavigationCssClasses}>
-            <img src={Logo} alt='logo' className={sideNavigationLogoCssClasses} />
+            <Link to=''><img src={Logo} alt='logo' className={sideNavigationLogoCssClasses} /></Link>
             <div className={Style.side_nav_button} onClick={exposeNavigation} >
                 <span className={Style.side_nav_button__text}>Menu</span>
                 <span className={Style.side_nav_button__icon}>&#9776;</span>
