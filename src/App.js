@@ -1,22 +1,23 @@
 import React from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import './App.css';
-import Portfolio from './portfolio/Portfolio';
 import Art from './art/Art';
-import WelcomeLogo from './welcome/WelcomeLogo';
 import store from './redux/store';
+import PortfolioContainer from './portfolio/PortfolioContainer';
+import {Provider} from 'react-redux';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-        <Switch>
-          <Route path='/portfolio' render={() => <Portfolio arts={store.getState().portfolio.arts} />} />
-          <Route path='/art' render={() => <Art art={store.getState().art.art}
-            prev={store.getState().art.prev}
-            next={store.getState().art.next} />} />
-          <Route path='/' component={WelcomeLogo} />
-        </Switch>
+        <Provider store={store}>
+          <Switch>
+            <Route path='/art' render={() => <Art art={store.getState().art.art}
+              prev={store.getState().art.prev}
+              next={store.getState().art.next} />} />
+            <Route path={['/portfolio', '/']} render={() => <PortfolioContainer />} />
+          </Switch>
+        </Provider>
       </BrowserRouter>
     </div>
   );
