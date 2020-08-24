@@ -4,13 +4,16 @@ import './App.css';
 import Art from './art/Art';
 import store from './redux/store';
 import PortfolioContainer from './portfolio/PortfolioContainer';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
+import NavBar from './navbar/NavBar'
+
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Provider store={store}>
+          <NavBar preloadAnimationEnabled={false} />
           <Switch>
             <Route path='/art' render={() => <Art art={store.getState().art.art}
               prev={store.getState().art.prev}

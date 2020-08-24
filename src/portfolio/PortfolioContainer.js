@@ -1,5 +1,7 @@
-import Portfolio from './Portfolio';
+import React from 'react';
 import { connect } from 'react-redux';
+import Portfolio from './Portfolio';
+import { setPortfolioArtsAC } from './../redux/portfolio-reducer'
 
 let mapStateToProps = (state) => {
     return {
@@ -8,9 +10,9 @@ let mapStateToProps = (state) => {
 }
 
 let mapDispatchToProps = (dispatch) => {
-
+    return {
+        setPortfolioArts: (arts) => dispatch(setPortfolioArtsAC(arts))
+    }
 }
 
-const PortfolioContainer = connect(mapStateToProps, mapDispatchToProps)(Portfolio);
-
-export default PortfolioContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(Portfolio);
