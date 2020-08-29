@@ -98,6 +98,10 @@
 @media (min-width: 769px) {
   .side_nav {
     height: 100%;
+    width: 0;
+    transition: width 1s linear;
+  }
+  .side_nav_width_animated{
     width: 58px;
   }
   .side_nav_button {
@@ -169,15 +173,6 @@
   animation-duration: .7s;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
-}
-
-@keyframes side_nav_preload_animation {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 58px;
-  }
 }
 
 @keyframes side_nav_extended_fade_in_animation {

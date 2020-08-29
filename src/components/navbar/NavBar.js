@@ -8,7 +8,7 @@ function NavBar(props) {
     let [transitionAnimationFinished, setTransitionAnimationFisished] = useState(false);
 
     let sideNavigationCssClasses = `${Style.side_nav} 
-    ${(window.innerWidth > 769 && !transitionAnimationFinished) ? Style.side_nav_animated : ''}`;
+    ${(window.innerWidth > 769 && props.logoPreloadFinished) ? Style.side_nav_width_animated : ''}`;
 
     let sideNavigationLogoCssClasses = `${Style.side_nav__logo} 
     ${props.navOpened ? Style.side_nav_extended__logo : ''}`;

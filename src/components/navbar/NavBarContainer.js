@@ -12,7 +12,7 @@ class NavBarContainer extends React.Component {
 
     render() {
         return <div>
-            <NavBar changeNavBarOpenState={this.props.changeNavBarOpenState} navOpened={this.props.navOpened} />
+            <NavBar logoPreloadFinished={this.props.logoPreloadFinished} changeNavBarOpenState={this.props.changeNavBarOpenState} navOpened={this.props.navOpened} />
             <NavBarExposed changeNavBarOpenState={this.props.changeNavBarOpenState} navOpened={this.props.navOpened} />
         </div>
     }
@@ -20,7 +20,8 @@ class NavBarContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        navOpened: state.navbar.navbarOpened
+        navOpened: state.navbar.navbarOpened,
+        logoPreloadFinished: state.welcomePage.preloadLogoHidden
     }
 }
 
