@@ -27,6 +27,12 @@
   
 }
 
+@media (max-width: 768px){
+  .main_container{
+    padding-left: 0;
+  }
+}
+
 @media (max-width: 1200px) {
   .main_container {
     -moz-column-count: 4;
