@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import NavBar from './components/navbar/NavBar';
 import TransitionContainer from './TransitionContainer';
 import WelcomeLogo from './components/welcome/WelcomeLogo';
+import NavBarContainer from './components/navbar/NavBarContainer';
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <BrowserRouter>
         <Provider store={store}>
           <WelcomeLogo />
-          <NavBar preloadAnimationEnabled={false} />
+          <NavBarContainer />
           <TransitionContainer />
         </Provider>
       </BrowserRouter>

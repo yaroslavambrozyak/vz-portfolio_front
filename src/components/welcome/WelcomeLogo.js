@@ -9,11 +9,14 @@ function WelcomeLogo(props) {
     let startedAt = useState(new Date().getMilliseconds())[0];
 
     useEffect(() => {
-        let finishedAt = new Date().getMilliseconds();
-        let delay = finishedAt - startedAt < 2500 ? 2500 : 0;
-        setTimeout(() => {
-            setPreloadFinished(true);
-        }, delay);
+        let a = props.isFinished
+        if (props.isFinished) {
+            let finishedAt = new Date().getMilliseconds();
+            let delay = finishedAt - startedAt < 2500 ? 2500 : 0;
+            setTimeout(() => {
+                setPreloadFinished(true);
+            }, delay);
+        }
     }, [props.isFinished]);
 
     let classes = `${Style.welcome_page} ${preloadFinished ? Style.welcome_page_dissapear : ''}`

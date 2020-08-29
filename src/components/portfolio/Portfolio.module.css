@@ -8,11 +8,12 @@
     column-count:         5;
     column-gap:           0px;    
     
-    transition: filter .5s linear;
+    
+    transition: filter .3s linear;
 }
 
 .main_container_disabled{
-  filter: grayscale(0.9) blur(2px);
+  filter: grayscale(0.9);
 }
 
 .transparent_container{
