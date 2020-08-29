@@ -19,10 +19,10 @@ function NavBarExposed(props) {
             <span className={Style.side_nav_extended_close_button} onClick={props.exposeNavigation}>&times;</span>
             <div className={Style.side_nav_extended__logo}>VLAD ZVARUN</div>
             <div className={Style.side_nav_extended_nav}>
-                <NavLink className={Style.side_nav_extended_nav__link} to=''>PORTFOLIO</NavLink>
-                <NavLink className={Style.side_nav_extended_nav__link} to='/hello'>GRAPHIC DESIGN</NavLink>
-                <NavLink className={Style.side_nav_extended_nav__link} to='/hello'>OTHER</NavLink>
-                <NavLink className={Style.side_nav_extended_nav__link} to='/hello'>RESUME</NavLink>
+                <NavLink onClick={()=>props.exposeNavigation()} className={Style.side_nav_extended_nav__link} to=''>PORTFOLIO</NavLink>
+                <NavLink onClick={()=>props.exposeNavigation()} className={Style.side_nav_extended_nav__link} to='/graphic'>GRAPHIC DESIGN</NavLink>
+                <NavLink onClick={()=>props.exposeNavigation()} className={Style.side_nav_extended_nav__link} to='/other'>OTHER</NavLink>
+                <NavLink onClick={()=>props.exposeNavigation()} className={Style.side_nav_extended_nav__link} to='/hello'>RESUME</NavLink>
             </div>
             <div className={Style.side_nav_extended_social_icons}>
                 <a className={Style.side_nav_extended_social_icons__icon} href='mailto:vladzvarun@icloud.com'><MailIcon /></a>

@@ -4,6 +4,7 @@ import Portfolio from './Portfolio';
 import { setPortfolioArtsAC, toggleFetchingAC } from './../../redux/portfolio-reducer';
 import { finishPreloadLogoAC } from './../../redux/welcome-reducer';
 import axios from "axios";
+import { withRouter } from 'react-router-dom';
 
 class PortfolioContainer extends React.Component {
 
@@ -13,8 +14,10 @@ class PortfolioContainer extends React.Component {
 
     componentDidMount() {
         this.props.toogleFetchProgressBar(true);
-
-        axios.get('http://localhost:8080/api/arts')
+        const { category } = this.props.match.params;
+        let c = category !== undefined ? category : 'portfolio';
+        let url = `http://localhost:8080/api/arts/${c}`
+        axios.get(url)
             .then(response => {
                 this.props.setPortfolioArts(response.data);
                 this.props.disableFirstLogoPreloader();
@@ -43,4 +46,4 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PortfolioContainer);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PortfolioContainer));

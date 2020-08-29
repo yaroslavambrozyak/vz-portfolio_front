@@ -19,7 +19,7 @@ function TransitionContainer({ location }) {
             <Route path='/art' render={() => <Art art={store.getState().art.art}
               prev={store.getState().art.prev}
               next={store.getState().art.next} />} />
-            <Route path={['/portfolio', '/']} render={() => <PortfolioContainer />} />
+            <Route path={['/:category', '/']} render={() => <PortfolioContainer />} />
           </Switch>
         </section>
       </CSSTransition>
