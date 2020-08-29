@@ -1,22 +1,19 @@
-.main_container{
-    line-height: 0;
-   
-    -webkit-column-count: 5;
-    -webkit-column-gap:   0px;
-    -moz-column-count:    5;
-    -moz-column-gap:      0px;
-    column-count:         5;
-    column-gap:           0px;    
-    
-    
-    transition: filter .3s linear;
+.main_container {
+  line-height: 0;
+  -webkit-column-count: 5;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 5;
+  -moz-column-gap: 0px;
+  column-count: 5;
+  column-gap: 0px;
+  transition: padding-left 1s linear;
 }
 
-.main_container_disabled{
-  filter: grayscale(0.9);
+.main_container_disabled {
+  filter: grayscale(0.9) blur(1px);
 }
 
-.transparent_container{
+.transparent_container {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -25,58 +22,39 @@
   z-index: 1;
 }
 
-@media (min-width: 769px){
-  .main_container_preload_animation{
-    animation-name: preload-img-container;
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
-  }
-}
-
-@media (min-width: 769px){
-  .main_container{
-    padding-left: 58px;
-  }
+.main_container_padding_animated {
+  padding-left: 58px;
+  
 }
 
 @media (max-width: 1200px) {
-    .main_container {
-    -moz-column-count:    4;
+  .main_container {
+    -moz-column-count: 4;
     -webkit-column-count: 4;
-    column-count:         4;
-    }
+    column-count: 4;
   }
-  @media (max-width: 1000px) {
-    .main_container {
-    -moz-column-count:    3;
+}
+
+@media (max-width: 1000px) {
+  .main_container {
+    -moz-column-count: 3;
     -webkit-column-count: 3;
-    column-count:         3;
-    }
+    column-count: 3;
   }
-  @media (max-width: 800px) {
-    .main_container {
-    -moz-column-count:    2;
+}
+
+@media (max-width: 800px) {
+  .main_container {
+    -moz-column-count: 2;
     -webkit-column-count: 2;
-    column-count:         2;
-    }
+    column-count: 2;
   }
-  @media (max-width: 400px) {
-    .main_container {
-    -moz-column-count:    1;
+}
+
+@media (max-width: 400px) {
+  .main_container {
+    -moz-column-count: 1;
     -webkit-column-count: 1;
-    column-count:         1;
-    }
+    column-count: 1;
   }
-
-  @keyframes preload-img-container {
-
-    0% {
-      padding-left: 0;
-    }
-  
-    100% {
-      padding-left: 58px;
-    }
-  
-  }
+}

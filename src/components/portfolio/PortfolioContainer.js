@@ -26,7 +26,12 @@ class PortfolioContainer extends React.Component {
 
     render() {
         return <div>
-            <Portfolio arts={this.props.arts} setPortfolioArts={this.props.setPortfolioArts} isNavBarOpened={this.props.navbarOpened} />
+            <Portfolio
+                arts={this.props.arts}
+                setPortfolioArts={this.props.setPortfolioArts}
+                isNavBarOpened={this.props.navbarOpened}
+                preloadLogoHidden={this.props.preloadLogoHidden}
+            />
         </div>
     }
 }
@@ -35,7 +40,8 @@ let mapStateToProps = (state) => {
     return {
         arts: state.portfolio.arts,
         isFetching: state.portfolio.isFetching,
-        navbarOpened: state.navbar.navbarOpened
+        navbarOpened: state.navbar.navbarOpened,
+        preloadLogoHidden: state.welcomePage.preloadLogoHidden
     }
 }
 
