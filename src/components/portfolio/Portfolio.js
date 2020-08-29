@@ -41,7 +41,7 @@ class Portfolio extends React.Component {
                 <div className={style.main_container + ' ' + (
                     (window.innerWidth > 769 && !this.state.preloadFinished) ? style.main_container_preload_animation : '') + ' ' +
                     (window.innerWidth > 769 && this.state.disabled ? style.main_container_disabled : '')}>
-                    {this.props.arts.map(a => <Art imageUrl={a.imageUrl} title={a.title} link={`/art/${a.link}`} />)}
+                    {this.props.arts.map(a => <Art imageUrl={a.imageUrl} smallImageUrl={a.smallImageUrl} name={a.name} link={`/art/${a.link}`} />)}
                 </div>
             </div>
         );
