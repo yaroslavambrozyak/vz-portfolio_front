@@ -1,13 +1,15 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import store from './redux/store';
 import { Provider } from 'react-redux';
-import NavBar from './components/navbar/NavBar';
-import TransitionContainer from './TransitionContainer';
 import WelcomeLogo from './components/welcome/WelcomeLogo';
 import NavBarContainer from './components/navbar/NavBarContainer';
-
+import Art from './components/art/Art';
+import PortfolioContainer from './components/portfolio/PortfolioContainer';
+import { AnimatePresence, motion } from 'framer-motion';
+import TransitionWrapper from './components/common/transition/TransitionWrapper';
+import { logoHidden } from './redux/welcome-reducer';
 
 function App() {
   return (
@@ -16,10 +18,23 @@ function App() {
         <Provider store={store}>
           <WelcomeLogo />
           <NavBarContainer />
-          <TransitionContainer />
+          <Route render={({ location }) => (
+            <TransitionWrapper location={location}>
+              <Switch location={location}>
+                <Route path='/art' render={() =>
+                  <Art art={store.getState().art.art} prev={store.getState().art.prev} next={store.getState().art.next} />
+                }
+                />
+                <Route path={['/:category', '/']} render={() =>
+                  <PortfolioContainer />
+                } />
+              </Switch>
+            </TransitionWrapper>
+          )}>
+          </Route>
         </Provider>
       </BrowserRouter>
-    </div>
+    </div >
   );
 };
 
