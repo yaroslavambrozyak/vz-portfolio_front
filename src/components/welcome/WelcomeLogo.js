@@ -3,10 +3,21 @@ import Style from './WelcomeLogo.module.css';
 import Logo from './preloadLogo.gif';
 import { connect } from 'react-redux';
 import { logoHidden } from '../../redux/welcome-reducer';
+import { AnimatePresence, motion } from 'framer-motion'
 
 function WelcomeLogo(props) {
 
     let startedAt = useState(new Date().getMilliseconds())[0];
+
+    const variants = {
+        visible: { opacity: 1 },
+        hidden: {
+            opacity: 0,
+            transitionEnd: {
+                display: "none",
+            }
+        }
+    }
 
     useEffect(() => {
         if (props.isFinished) {
@@ -16,11 +27,14 @@ function WelcomeLogo(props) {
         }
     }, [props.isFinished]);
 
-    let classes = `${Style.welcome_page} ${props.isLogoHidden ? Style.welcome_page_dissapear : ''}`
+    return <motion.div animate={props.isLogoHidden ? 'hidden' : 'visible'}
+        variants={variants}
+        transition={{ duration: .5 }}
+        className={Style.welcome_page}
 
-    return <div className={classes}>
+    >
         <img className={Style.welcome_page_logo} src={Logo} alt='' />
-    </div>
+    </motion.div>
 
 }
 

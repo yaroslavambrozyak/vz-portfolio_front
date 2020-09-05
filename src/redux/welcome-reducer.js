@@ -12,6 +12,7 @@ const welcomeReducer = (state = initialState, action) => {
             return { ...state, preloadFinished: true };
         }
         case PRELOAD_LOGO_HIDDEN: {
+            document.body.style.overflow = "scroll";
             return { ...state, preloadLogoHidden: true }
         }
     }

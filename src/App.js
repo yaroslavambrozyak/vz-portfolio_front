@@ -7,11 +7,10 @@ import WelcomeLogo from './components/welcome/WelcomeLogo';
 import NavBarContainer from './components/navbar/NavBarContainer';
 import Art from './components/art/Art';
 import PortfolioContainer from './components/portfolio/PortfolioContainer';
-import { AnimatePresence, motion } from 'framer-motion';
 import TransitionWrapper from './components/common/transition/TransitionWrapper';
-import { logoHidden } from './redux/welcome-reducer';
 
 function App() {
+
   return (
     <div>
       <BrowserRouter>
