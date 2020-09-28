@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { SortableContainer, SortableElement } from 'react-sortable-hoc';
 import style from './GridView.module.css'
-
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 function GridView(props) {
 
@@ -40,11 +41,19 @@ function GridView(props) {
 
     const onSortEnd = ({ oldIndex, newIndex }) => {
         let sorted = array_move(itemsArr, oldIndex, newIndex);
-        debugger;
         setItems(sorted);
     };
+
+    const options = [
+        'one', 'two', 'three'
+    ];
+    const defaultOption = options[0];
+
     return (
-        <SortableList items={itemsArr} onSortEnd={onSortEnd} axis={'x'} />
+        <div>
+            <Dropdown options={options} onChange={(x)=>{console.log(x)}} value={defaultOption} placeholder="Select an option" />;
+            <SortableList items={itemsArr} onSortEnd={onSortEnd} axis={'x'} />
+        </div>
     )
 
 }
