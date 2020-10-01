@@ -53,6 +53,7 @@ function GridView(props) {
         <div>
             <Dropdown options={options} onChange={(x)=>{console.log(x)}} value={defaultOption} placeholder="Select an option" />;
             <SortableList items={itemsArr} onSortEnd={onSortEnd} axis={'x'} />
+            <button>Submit</button>
         </div>
     )
 

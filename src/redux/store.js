@@ -1,14 +1,16 @@
-import {createStore, combineReducers} from "redux";
+import { createStore, combineReducers } from "redux";
 import portfolioReducer from "./portfolio-reducer";
 import artReducer from "./art-reducer";
 import welcomeReducer from './welcome-reducer';
 import navbarReducer from './navbar-reducer';
+import { reducer as formReducer } from 'redux-form'
 
 let reducers = combineReducers({
     portfolio: portfolioReducer,
     art: artReducer,
     welcomePage: welcomeReducer,
-    navbar: navbarReducer
+    navbar: navbarReducer,
+    form: formReducer
 });
 
 let store = createStore(reducers);
