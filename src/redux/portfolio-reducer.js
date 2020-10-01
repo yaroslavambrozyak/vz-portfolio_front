@@ -27,7 +27,6 @@ export const setPortfolioArtsAC = (arts) => ({ type: SET_PORTFOLIO_ARTS, arts })
 export const toggleFetchingAC = (isFetching) => ({ type: FETCH_IN_PROGRESS, isFetching });
 
 export const getPortfolioArtsThunkCreator = (category) => (dispatch) => {
-
     dispatch(toggleFetchingAC(true));
     let c = category !== undefined ? category : 'portfolio';
     artsApi.getArtsByCategory(c)

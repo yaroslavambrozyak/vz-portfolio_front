@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
+import FieldFileInput from '../../common/upload/FieldFileInput';
 
 
 function AdminArt(props) {
     return (
-        <AdminForm onSubmit={values => {
-
-        }} />
+        <AdminForm {...props} />
     )
 }
 
 let AdminForm = props => {
-    let categories = [{ id: 'qweW', name: 'art1' }, { id: 'qweff', name: 'art2' }, { id: 'qwewwq', name: 'art3' }];
-    let categoriesOptions = categories.map(c => <option value={c.id}>{c.name}</option>);
-
-    let projects = [{ id: 'qweW', name: 'art11' }, { id: 'qweff', name: 'art21' }, { id: 'qwewwq', name: 'art31' }];
-    let projectsOptions = categories.map(c => <option value={c.id}>{c.name}</option>);
+    let categoriesOptions = props.categories.map(c => <option value={c.id}>{c.name}</option>);
+    let projectsOptions = props.projects.map(c => <option value={c.id}>{c.name}</option>);
 
     const { handleSubmit } = props
     return (
@@ -43,7 +39,7 @@ let AdminForm = props => {
                 <Field name="separateView" id="sepView" component="input" type="checkbox" />
             </div>
             <div>
-                <Field name="separateView" id="sepView" component="input" type="file" />
+                <Field name="arts" multiple component={FieldFileInput}/>
             </div>
             <button type="submit">Submit</button>
         </form>
