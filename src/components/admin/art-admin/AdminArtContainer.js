@@ -1,4 +1,8 @@
 import React from 'react';
+import { artsApi } from './../../../api/art-api';
+import AdminArt from './AdminArt';
+import { connect } from 'react-redux';
+
 
 class AdminArtContainer extends React.Component {
 
@@ -11,9 +15,9 @@ class AdminArtContainer extends React.Component {
     }
 
     render() {
-        let cat = [{id:'dasgeW', name:'hello'}];
-        let proj = [{id:'tfg', name:'ww'}];
-        <AdminArtContainer onSubmit={e=>console.log(e)} categories={cat} projects={proj}/>
+        let cat = [{ id: 'dasgeW', name: 'hello' }];
+        let proj = [{ id: 'tfg', name: 'ww' }];
+        return <AdminArt onSubmit={e => artsApi.postArt({name:e.name},e.arts)} categories={cat} projects={proj} />
     }
 }
 
@@ -25,7 +29,6 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        setPortfolioArts: (arts) => dispatch(setPortfolioArtsAC(arts)),
     }
 }
 

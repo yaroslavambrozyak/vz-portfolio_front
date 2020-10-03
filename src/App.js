@@ -10,7 +10,7 @@ import PortfolioContainer from './components/portfolio/PortfolioContainer';
 import TransitionWrapper from './components/common/transition/TransitionWrapper';
 import GridView from './components/admin/grid/GridView';
 import AdminPanel from './components/admin/panel/AdminPanel';
-import AdminArt from './components/admin/art-admin/AdminArt';
+import AdminArtContainer from './components/admin/art-admin/AdminArtContainer';
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
     <React.Fragment>
       <AdminPanel />
       <Switch>
-        <Route exact path='/admin/arts' component={AdminArt} />
+        <Route exact path='/admin/arts' component={AdminArtContainer} />
         <Route path={['/admin/arts/grid', '/admin']} component={GridView} />
       </Switch>
     </React.Fragment>

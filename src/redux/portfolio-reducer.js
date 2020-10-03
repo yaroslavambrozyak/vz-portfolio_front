@@ -31,7 +31,7 @@ export const getPortfolioArtsThunkCreator = (category) => (dispatch) => {
     let c = category !== undefined ? category : 'portfolio';
     artsApi.getArtsByCategory(c)
         .then(response => {
-            dispatch(setPortfolioArtsAC(response.data));
+            dispatch(setPortfolioArtsAC(response));
             dispatch(finishPreloadLogoAC());
         });
 }
