@@ -5,12 +5,14 @@ import welcomeReducer from './welcome-reducer';
 import navbarReducer from './navbar-reducer';
 import { reducer as formReducer } from 'redux-form'
 import thunkMiddleware from 'redux-thunk';
+import categoryReducer from './category-reducer';
 
 let reducers = combineReducers({
     portfolio: portfolioReducer,
     art: artReducer,
     welcomePage: welcomeReducer,
     navbar: navbarReducer,
+    category: categoryReducer,
     form: formReducer
 });
 

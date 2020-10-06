@@ -1,14 +1,10 @@
-import axios from "axios";
+import axios from './axios-conf';
 
 
-const instance = axios.create({
-  baseURL: "http://localhost:8080/api",
-  responseType: "json"
-});
 
 export const artsApi = {
   getArtsByCategory(category) {
-    return instance.get(`/arts/${category}`)
+    return axios.get(`/arts/${category}`)
       .then(response => {
         return response.data;
       })
@@ -20,7 +16,7 @@ export const artsApi = {
     for (let i = 0; i < files.length; i++) {
       formData.append(`files`, files[i])
     }
-    return instance({
+    return axios({
       method: 'post',
       data: formData,
       headers: { 'Content-Type': 'multipart/form-data' },
@@ -30,4 +26,5 @@ export const artsApi = {
     })
   }
 }
+
 

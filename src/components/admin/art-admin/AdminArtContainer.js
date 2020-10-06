@@ -2,6 +2,7 @@ import React from 'react';
 import { artsApi } from './../../../api/art-api';
 import AdminArt from './AdminArt';
 import { connect } from 'react-redux';
+import { getCategoriesThuncCreator } from './../../../redux/category-reducer';
 
 
 class AdminArtContainer extends React.Component {
@@ -11,25 +12,22 @@ class AdminArtContainer extends React.Component {
     }
 
     componentDidMount() {
-
+        this.props.getCategoriesThuncCreator();
     }
 
     render() {
-        let cat = [{ id: 'dasgeW', name: 'hello' }];
         let proj = [{ id: 'tfg', name: 'ww' }];
-        return <AdminArt onSubmit={e => artsApi.postArt({name:e.name},e.arts)} categories={cat} projects={proj} />
+        return <AdminArt onSubmit={e => artsApi.postArt({ name: e.name }, e.arts)} categories={this.props.categories} projects={proj} />
     }
 }
 
 let mapStateToProps = (state) => {
     return {
         arts: state.portfolio.arts,
+        categories: state.category.categories
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(AdminArtContainer);
+
+export default connect(mapStateToProps, { getCategoriesThuncCreator })(AdminArtContainer);
