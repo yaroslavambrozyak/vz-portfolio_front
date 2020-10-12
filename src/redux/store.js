@@ -6,6 +6,7 @@ import navbarReducer from './navbar-reducer';
 import { reducer as formReducer } from 'redux-form'
 import thunkMiddleware from 'redux-thunk';
 import categoryReducer from './category-reducer';
+import projectsReducer from './project-reducer';
 
 let reducers = combineReducers({
     portfolio: portfolioReducer,
@@ -13,6 +14,7 @@ let reducers = combineReducers({
     welcomePage: welcomeReducer,
     navbar: navbarReducer,
     category: categoryReducer,
+    project: projectsReducer,
     form: formReducer
 });
 

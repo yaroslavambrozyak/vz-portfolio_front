@@ -3,6 +3,7 @@ import { artsApi } from './../../../api/art-api';
 import AdminArt from './AdminArt';
 import { connect } from 'react-redux';
 import { getCategoriesThuncCreator } from './../../../redux/category-reducer';
+import { getProjects } from './../../../redux/project-reducer';
 
 
 class AdminArtContainer extends React.Component {
@@ -13,6 +14,7 @@ class AdminArtContainer extends React.Component {
 
     componentDidMount() {
         this.props.getCategoriesThuncCreator();
+        this.props.getProjects();
     }
 
     render() {
@@ -30,4 +32,4 @@ let mapStateToProps = (state) => {
 
 
 
-export default connect(mapStateToProps, { getCategoriesThuncCreator })(AdminArtContainer);
+export default connect(mapStateToProps, { getCategoriesThuncCreator, getProjects })(AdminArtContainer);
