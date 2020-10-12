@@ -17,9 +17,20 @@ class AdminArtContainer extends React.Component {
         this.props.getProjects();
     }
 
+    onArtPost(e){
+        let payload = {
+            name: e.name,
+            description: e.description,
+            categoryId: e.category,
+            projectId: e.project,
+            separateView: e.separateView
+        }
+        artsApi.postArt(payload, e.arts);
+    }
+
     render() {
         let proj = [{ id: 'tfg', name: 'ww' }];
-        return <AdminArt onSubmit={e => artsApi.postArt({ name: e.name }, e.arts)} categories={this.props.categories} projects={proj} />
+        return <AdminArt onSubmit={this.onArtPost} categories={this.props.categories} projects={proj} />
     }
 }
 
