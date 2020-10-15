@@ -10,6 +10,13 @@ export const artsApi = {
       })
   },
 
+  getArt(artId) {
+    return axios.get(`/arts/art/${artId}`)
+      .then(response => {
+        return response.data;
+      });
+  },
+
   postArt(data, files) {
     let formData = new FormData();
     formData.append('data', JSON.stringify(data));

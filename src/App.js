@@ -11,6 +11,7 @@ import TransitionWrapper from './components/common/transition/TransitionWrapper'
 import GridView from './components/admin/grid/GridView';
 import AdminPanel from './components/admin/panel/AdminPanel';
 import AdminArtContainer from './components/admin/art-admin/AdminArtContainer';
+import ArtContainer from './components/art/ArtContainer';
 
 function App() {
 
@@ -31,10 +32,7 @@ function App() {
       <Route render={({ location }) => (
         <TransitionWrapper location={location}>
           <Switch location={location}>
-            <Route path='/art' render={() =>
-              <Art art={store.getState().art.art} prev={store.getState().art.prev} next={store.getState().art.next} />
-            }
-            />
+            <Route path='/art/:id' component={ArtContainer}/>
             <Route path={['/:category', '/']} render={() =>
               <PortfolioContainer />
             } />

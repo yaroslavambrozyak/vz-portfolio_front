@@ -143,11 +143,8 @@
     }
     .art_image {
         max-width: 100%;
-        max-height: 95vh;
     }
     .art_slider {
-        height: 95vh;
-        overflow: scroll;
         -ms-overflow-style: none;
         /* IE and Edge */
         scrollbar-width: none;
