@@ -2,7 +2,6 @@ import React from 'react';
 import style from './Art.module.css';
 import { NavLink } from 'react-router-dom';
 import ModalImg from './ModalImg';
-import TransitionWrapper from '../common/transition/TransitionWrapper';
 
 function Art(props) {
 

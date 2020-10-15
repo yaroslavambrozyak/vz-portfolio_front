@@ -39,6 +39,12 @@ let AdminForm = props => {
                 <Field name="separateView" id="sepView" component="input" type="checkbox" />
             </div>
             <div>
+                <Field name="col" component="input" type="number" />
+            </div>
+            <div>
+                <Field name="row" component="input" type="number" />
+            </div>
+            <div>
                 <Field name="arts" multiple component={FieldFileInput}/>
             </div>
             <button type="submit">Submit</button>
@@ -47,7 +53,8 @@ let AdminForm = props => {
 }
 
 AdminForm = reduxForm({
-    form: 'artForm'
+    form: 'artForm',
+    initialValues: { col: 1, row: 1 }
 })(AdminForm)
 
 export default AdminArt;
