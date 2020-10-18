@@ -33,7 +33,7 @@ function App() {
         <TransitionWrapper location={location}>
           <Switch location={location}>
             <Route path='/art/:id' component={ArtContainer}/>
-            <Route path={['/:category', '/']} render={() =>
+            <Route path={['/:types/:type', '/']} render={() =>
               <PortfolioContainer />
             } />
           </Switch>

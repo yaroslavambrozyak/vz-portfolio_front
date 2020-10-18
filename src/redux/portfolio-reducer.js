@@ -26,10 +26,9 @@ export default portfolioReducer;
 export const setPortfolioArtsAC = (arts) => ({ type: SET_PORTFOLIO_ARTS, arts });
 export const toggleFetchingAC = (isFetching) => ({ type: FETCH_IN_PROGRESS, isFetching });
 
-export const getPortfolioArtsThunkCreator = (category) => (dispatch) => {
+export const getPortfolioArtsThunkCreator = (categoryType, type) => (dispatch) => {
     dispatch(toggleFetchingAC(true));
-    let c = category !== undefined ? category : 'portfolio';
-    artsApi.getArtsByCategory(c)
+    artsApi.getArtsByCategoryAndType(categoryType, type)
         .then(response => {
             dispatch(setPortfolioArtsAC(response));
             dispatch(finishPreloadLogoAC());

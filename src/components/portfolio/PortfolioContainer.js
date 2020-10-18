@@ -11,7 +11,9 @@ class PortfolioContainer extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getPortfolioArtsThunkCreator();
+        let categoryType = this.props.match.params.types;
+        let type = this.props.match.params.type;
+        this.props.getPortfolioArtsThunkCreator(categoryType, type);
     }
 
     render() {
