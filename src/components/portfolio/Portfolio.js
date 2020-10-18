@@ -25,7 +25,7 @@ class Portfolio extends React.Component {
                         imageUrl={a.imageUrl}
                         smallImageUrl={a.smallImageUrl}
                         name={a.name}
-                        link={`/art/${a.link}`}
+                        link={`/art/${a.id}`}
                         row={a.row}
                         col={a.col}
                     />)}

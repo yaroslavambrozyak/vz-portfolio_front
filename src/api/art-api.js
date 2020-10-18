@@ -1,17 +1,16 @@
 import axios from './axios-conf';
 
 
-
 export const artsApi = {
   getArtsByCategory(category) {
-    return axios.get(`/arts/${category}`)
+    return axios.get(`/arts/category/${category}`)
       .then(response => {
         return response.data;
       })
   },
 
   getArt(artId) {
-    return axios.get(`/arts/art/${artId}`)
+    return axios.get(`/arts/${artId}`)
       .then(response => {
         return response.data;
       });
