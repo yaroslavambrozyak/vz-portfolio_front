@@ -23,7 +23,9 @@ class AdminArtContainer extends React.Component {
             description: e.description,
             categoryId: e.category,
             projectId: e.project,
-            separateView: e.separateView
+            separateView: e.separateView,
+            col: e.col,
+            row: e.row
         }
         artsApi.postArt(payload, e.arts);
     }

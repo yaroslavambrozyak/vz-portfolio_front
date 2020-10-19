@@ -9,11 +9,11 @@ import { ReactComponent as ArtStationIcon } from './artstation_icon.svg'
 function NavBarExposed(props) {
 
     let categories = props.categories
-    .map(c=> <NavLink onClick={props.changeNavBarOpenState} 
-    className={Style.side_nav_extended_nav__link} to={`/categories/${c.name}`}>{c.name.toUpperCase()}</NavLink> )
+        .map(c => <NavLink onClick={props.changeNavBarOpenState}
+            className={Style.side_nav_extended_nav__link} to={`/categories/${c.name}`}>{c.name.toUpperCase()}</NavLink>)
 
     let sideNavExtendedCssClasses = `${Style.side_nav_extended} ${props.navOpened ? Style.side_nav_extended_opened : ''}`;
-    
+
     let sideNavExtendedContentContainerCssClasses = `${Style.side_nav_extended_content_wrapper} 
     ${props.navOpened ? Style.side_nav_extended_fade_in_animated : Style.side_nav_extended_fade_out_animated}`;
 
@@ -23,6 +23,7 @@ function NavBarExposed(props) {
             <div className={Style.side_nav_extended__logo}>VLAD ZVARUN</div>
             <div className={Style.side_nav_extended_nav}>
                 {categories}
+                <NavLink onClick={props.changeNavBarOpenState}className={Style.side_nav_extended_nav__link} to='/resume'>RESUME</NavLink>
             </div>
             <div className={Style.side_nav_extended_social_icons}>
                 <a className={Style.side_nav_extended_social_icons__icon} href='mailto:vladzvarun@icloud.com'><MailIcon /></a>
