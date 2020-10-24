@@ -1,9 +1,10 @@
 pipeline {
   
   stages {
-    stage('Install Packages') {
-      steps {
-        echo 'hello'
-      }
-    }
+        stage('Install Packages') {
+        steps {
+            echo 'hello'
+        }
+        }
+    }   
 }
