@@ -1,6 +1,4 @@
 {
-  "homepage": "http://yaroslavambrozyak.github.io/vz-portfolio_front",
-  "name": "vz-portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
