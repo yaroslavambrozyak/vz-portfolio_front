@@ -15,5 +15,13 @@ pipeline {
                 sh 'npm run build'
             }
         }
+        stage('Upload'){
+            steps{
+                withAWS(region:'US_EAST_2', credentials:'VZ_PORTFOLIO_S3'){
+                    s3Delete(bucket:'vz-portfolio-intro', path:'**/*')
+                    s3Upload(bucket:'vz-portfolio-intro', workingDir:'build', includePathPattern:'**/*');
+                }
+            }
+        }
     }   
 }
