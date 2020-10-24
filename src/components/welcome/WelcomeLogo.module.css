@@ -1,0 +1,17 @@
+.welcome_page{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.welcome_page_logo{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+

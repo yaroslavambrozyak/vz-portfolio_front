@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Preload from './preload/Preload';
-import Portfolio from './portfolio/Portfolio'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Preload/>
-    <Portfolio/>
+      <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

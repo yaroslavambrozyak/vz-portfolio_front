@@ -1,0 +1,47 @@
+.image_container{
+    position: relative;
+}
+
+.image{
+    width: 100% !important;
+    height: auto !important;
+}
+
+.image_overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(1, 1, 1, 0.5);;
+}
+
+
+.image_container:hover .image_overlay{
+    opacity: 1;
+}
+
+.image_title{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.image_link{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
