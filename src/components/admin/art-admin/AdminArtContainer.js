@@ -31,15 +31,14 @@ class AdminArtContainer extends React.Component {
     }
 
     render() {
-        let proj = [{ id: 'tfg', name: 'ww' }];
-        return <AdminArt onSubmit={this.onArtPost} categories={this.props.categories} projects={proj} />
+        return <AdminArt onSubmit={this.onArtPost} categories={this.props.categories} projects={this.props.projects} />
     }
 }
 
 let mapStateToProps = (state) => {
     return {
-        arts: state.portfolio.arts,
-        categories: state.category.categories
+        categories: state.category.categories,
+        projects: state.project.projects
     }
 }
 

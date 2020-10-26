@@ -5,10 +5,9 @@ import store from './redux/store';
 import { Provider } from 'react-redux';
 import WelcomeLogo from './components/welcome/WelcomeLogo';
 import NavBarContainer from './components/navbar/NavBarContainer';
-import Art from './components/art/Art';
 import PortfolioContainer from './components/portfolio/PortfolioContainer';
 import TransitionWrapper from './components/common/transition/TransitionWrapper';
-import GridView from './components/admin/grid/GridView';
+import GridViewContainer from './components/admin/grid/GridViewContainer';
 import AdminPanel from './components/admin/panel/AdminPanel';
 import AdminArtContainer from './components/admin/art-admin/AdminArtContainer';
 import ArtContainer from './components/art/ArtContainer';
@@ -20,7 +19,7 @@ function App() {
       <AdminPanel />
       <Switch>
         <Route exact path='/admin/arts' component={AdminArtContainer} />
-        <Route path={['/admin/arts/grid', '/admin']} component={GridView} />
+        <Route path={['/admin/arts/grid', '/admin']} component={GridViewContainer} />
       </Switch>
     </React.Fragment>
   );

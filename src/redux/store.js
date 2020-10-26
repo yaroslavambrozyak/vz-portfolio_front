@@ -7,6 +7,7 @@ import { reducer as formReducer } from 'redux-form'
 import thunkMiddleware from 'redux-thunk';
 import categoryReducer from './category-reducer';
 import projectsReducer from './project-reducer';
+import adminGridViewReducer from './admin-grid-view-reducer';
 
 let reducers = combineReducers({
     portfolio: portfolioReducer,
@@ -15,7 +16,8 @@ let reducers = combineReducers({
     navbar: navbarReducer,
     category: categoryReducer,
     project: projectsReducer,
-    form: formReducer
+    form: formReducer,
+    adminGridView: adminGridViewReducer
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));

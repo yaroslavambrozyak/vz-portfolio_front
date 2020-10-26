@@ -10,8 +10,8 @@ function AdminArt(props) {
 }
 
 let AdminForm = props => {
-    let categoriesOptions = props.categories.map(c => <option value={c.id}>{c.name}</option>);
-    let projectsOptions = props.projects.map(c => <option value={c.id}>{c.name}</option>);
+    let categoriesOptions = props.categories ? props.categories.map(c => <option value={c.id}>{c.name}</option>): [];
+    let projectsOptions = props.projects ? props.projects.map(c => <option value={c.id}>{c.name}</option>): [];
 
     const { handleSubmit } = props
     return (
