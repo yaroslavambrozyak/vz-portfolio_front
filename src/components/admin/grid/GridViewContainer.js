@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getCategoriesThuncCreator } from './../../../redux/category-reducer';
 import GridView from './GridView'
-import {setCategory, setSortedArts, getArtsByCategoryName} from './../../../redux/admin-grid-view-reducer';
+import { setCategory, setSortedArts, getArtsByCategoryName, changeCategory, getCategories } from './../../../redux/admin-grid-view-reducer';
 
 class GridViewContainer extends React.Component {
 
@@ -11,21 +10,24 @@ class GridViewContainer extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getCategoriesThuncCreator();
+        this.props.getCategories();
     }
 
-    componentDidUpdate(){
-        if (this.props.categories && this.props.categories.length > 0 && this.props.arts.length == 0) {
-            let category = this.props.categories[0];
-            this.props.setCategory(category);
-            this.props.getArtsByCategoryName(category.name);
+    componentDidUpdate() {
+        if (this.props.categories && this.props.categories.length > 0 && !this.props.choosedCategory) {
+            this.props.changeCategory(this.props.categories[0]);
         }
     }
 
+    onCategoryChange(category) {
+        this.props.changeCategory(category);
+    }
 
     render() {
         return <div>
-            <GridView categories={this.props.categories} arts={this.props.arts} />
+            <GridView categories={this.props.categories}
+                arts={this.props.arts} onCategoryChange={this.onCategoryChange.bind(this)}
+                choosedCategory={this.props.choosedCategory} />
         </div>
     }
 
@@ -33,7 +35,11 @@ class GridViewContainer extends React.Component {
 
 let mapStateToProps = (state) => ({
     categories: state.category.categories,
-    arts: state.adminGridView.sortedArts
+    arts: state.adminGridView.sortedArts,
+    choosedCategory: state.adminGridView.choosedCategory
 })
 
-export default connect(mapStateToProps, {getCategoriesThuncCreator, setCategory, setSortedArts, getArtsByCategoryName})(GridViewContainer);
+export default connect(mapStateToProps, {
+    setCategory, setSortedArts,
+    getArtsByCategoryName, changeCategory, getCategories
+})(GridViewContainer);

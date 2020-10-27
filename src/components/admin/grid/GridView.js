@@ -35,13 +35,18 @@ function GridView(props) {
         //setItems(sorted);
     };
 
+    let categoryM = (c) => ({ value: c.id, label: c.name });
+
     let catego = props.categories.map(c => {
-        return { value: c.id, label: c.name };
+        return categoryM(c);
     })
-    const defaultOption = catego[0];
+
+    
+    let categoryMapper = (c) => ({id:c.value, name: c.label});
+
     return (
         <div>
-            <Dropdown options={catego} onChange={(x) => { console.log(x) }} value={defaultOption} placeholder="Select an option" />;
+            <Dropdown options={catego} onChange={(category) => { props.onCategoryChange(categoryMapper(category)) }} value={categoryM(props.choosedCategory)} placeholder="Select an option" />;
             <SortableList items={props.arts} onSortEnd={onSortEnd} axis={'x'} />
             <button>Submit</button>
         </div>
