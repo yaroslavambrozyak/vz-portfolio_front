@@ -47,3 +47,9 @@ export const getCategories = () => (dispatch) => {
             }
         })
 }
+
+export const submitOrder = () => (dispatch, getState) => {
+    let { adminGridView } = getState();
+    let orderedArtIdList = adminGridView.sortedArts.map(a => a.id);
+    artsApi.postArtPositions(orderedArtIdList);
+}

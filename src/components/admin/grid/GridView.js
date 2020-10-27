@@ -32,7 +32,7 @@ function GridView(props) {
 
     const onSortEnd = ({ oldIndex, newIndex }) => {
         let sorted = array_move(props.arts, oldIndex, newIndex);
-        //setItems(sorted);
+        props.onSort(sorted);
     };
 
     let categoryM = (c) => ({ value: c.id, label: c.name });
@@ -47,8 +47,8 @@ function GridView(props) {
     return (
         <div>
             <Dropdown options={catego} onChange={(category) => { props.onCategoryChange(categoryMapper(category)) }} value={categoryM(props.choosedCategory)} placeholder="Select an option" />;
-            <SortableList items={props.arts} onSortEnd={onSortEnd} axis={'x'} />
-            <button>Submit</button>
+            <SortableList items={props.arts} onSortEnd={onSortEnd} axis={'xy'} />
+            <button onClick={props.onSubmit}>Submit</button>
         </div>
     )
 }

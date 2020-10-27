@@ -20,7 +20,7 @@ export const artsApi = {
     let formData = new FormData();
     formData.append('data', new Blob([JSON.stringify(data)], {
       type: "application/json"
-  }));
+    }));
     for (let i = 0; i < files.length; i++) {
       formData.append(`files`, files[i])
     }
@@ -32,6 +32,10 @@ export const artsApi = {
     }).then(r => {
       return r.data;
     })
+  },
+
+  postArtPositions(orderedArtIdList) {
+    return axios.put('/arts/order', { orderedArts: orderedArtIdList });
   }
 }
 

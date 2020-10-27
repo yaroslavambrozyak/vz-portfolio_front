@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import GridView from './GridView'
-import { setCategory, setSortedArts, getArtsByCategoryName, changeCategory, getCategories } from './../../../redux/admin-grid-view-reducer';
+import { setCategory, setSortedArts, getArtsByCategoryName, changeCategory, getCategories, submitOrder } from './../../../redux/admin-grid-view-reducer';
 
 class GridViewContainer extends React.Component {
 
@@ -23,11 +23,20 @@ class GridViewContainer extends React.Component {
         this.props.changeCategory(category);
     }
 
+    onSort(sorted){
+        this.props.setSortedArts(sorted);
+    }
+
+    onSubmit(){
+        this.props.submitOrder();
+    }
+
     render() {
         return <div>
             <GridView categories={this.props.categories}
                 arts={this.props.arts} onCategoryChange={this.onCategoryChange.bind(this)}
-                choosedCategory={this.props.choosedCategory} />
+                choosedCategory={this.props.choosedCategory} onSort={this.onSort.bind(this)}
+                onSubmit={this.onSubmit.bind(this)} />
         </div>
     }
 
@@ -41,5 +50,5 @@ let mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
     setCategory, setSortedArts,
-    getArtsByCategoryName, changeCategory, getCategories
+    getArtsByCategoryName, changeCategory, getCategories, submitOrder
 })(GridViewContainer);
