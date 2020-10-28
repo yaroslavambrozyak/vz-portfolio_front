@@ -3,7 +3,8 @@ import axios from './axios-conf';
 
 export const artsApi = {
   getArtsByCategoryAndType(category, type) {
-    return axios.get(`/arts/${category}/${type}`)
+    let url = category && type ? `/arts/${category}/${type}` : '/arts'
+    return axios.get(url)
       .then(response => {
         return response.data;
       })

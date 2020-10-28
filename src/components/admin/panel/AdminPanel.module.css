@@ -1,0 +1,9 @@
+.admin_panel_link{
+    text-decoration: none;
+    margin: 15px;
+    color: black;
+}
+
+.admin_panel_link_active{
+    color: orange;
+}
