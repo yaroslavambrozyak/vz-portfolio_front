@@ -10,8 +10,8 @@ function AdminArt(props) {
 }
 
 let AdminForm = props => {
-    let categoriesOptions = props.categories ? props.categories.map(c => <option value={c.id}>{c.name}</option>) : [];
     let projectsOptions = props.projects ? props.projects.map(c => <option value={c.id}>{c.name}</option>) : [];
+    let categoriesOptions = props.categories ? props.categories.map(c=><option key={c.id} value={c.id}>{c.name}</option>) : [];
 
     const { handleSubmit } = props
     return (
@@ -25,9 +25,9 @@ let AdminForm = props => {
                 <Field name="description" component="input" type="text" />
             </div>
             <div>
+
                 <label htmlFor="category">Category</label><br/>
                 <Field name="category" component="select">
-                    <option></option>
                     {categoriesOptions}
                 </Field>
             </div>
@@ -61,7 +61,8 @@ let AdminForm = props => {
 
 AdminForm = reduxForm({
     form: 'artForm',
-    initialValues: { col: 1, row: 1 }
+    enableReinitialize: true,
+    initialValues: {col:1,row:1}
 })(AdminForm)
 
 export default AdminArt;

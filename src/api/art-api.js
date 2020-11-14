@@ -1,3 +1,4 @@
+import { getPrevArt } from '../redux/art-reducer';
 import axios from './axios-conf';
 
 
@@ -37,6 +38,14 @@ export const artsApi = {
 
   postArtPositions(orderedArtIdList) {
     return axios.put('/arts/order', { orderedArts: orderedArtIdList });
+  },
+
+  getNextArt(artId){
+    return axios.get(`/arts/${artId}/next`)
+  },
+
+  getPrevArt(artId){
+    return axios.get(`/arts/${artId}/prev`);
   }
 }
 

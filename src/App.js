@@ -18,8 +18,9 @@ function App() {
     <React.Fragment>
       <AdminPanel />
       <Switch>
-        <Route exact path='/admin/arts' component={AdminArtContainer} />
-        <Route path={['/admin/arts/grid', '/admin']} component={GridViewContainer} />
+        <Route path={'/admin/arts/create'} component={AdminArtContainer} />
+        <Route path={['/admin/arts/grid']} component={GridViewContainer} />
+        <Route path='/admin/arts/edit/:id' component={AdminArtContainer}/>
       </Switch>
     </React.Fragment>
   );

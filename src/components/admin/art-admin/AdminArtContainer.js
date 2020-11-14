@@ -4,7 +4,7 @@ import AdminArt from './AdminArt';
 import { connect } from 'react-redux';
 import { getCategoriesThuncCreator } from './../../../redux/category-reducer';
 import { getProjects } from './../../../redux/project-reducer';
-
+import { getArt } from './../../../redux/art-reducer';
 
 class AdminArtContainer extends React.Component {
 
@@ -15,9 +15,13 @@ class AdminArtContainer extends React.Component {
     componentDidMount() {
         this.props.getCategoriesThuncCreator();
         this.props.getProjects();
+        let id = this.props.match.params.id;
+        if (id) {
+            this.props.getArt(id);
+        }
     }
 
-    onArtPost(e){
+    onArtPost(e) {
         let payload = {
             name: e.name,
             description: e.description,
@@ -31,17 +35,23 @@ class AdminArtContainer extends React.Component {
     }
 
     render() {
-        return <AdminArt onSubmit={this.onArtPost} categories={this.props.categories} projects={this.props.projects} />
+        let initVal={};
+        if (this.props.art.id != '') {
+            initVal = { ...this.props.art, category: { id: "qN2Nas", name: "other" } }
+            
+        }
+        return <AdminArt onSubmit={this.onArtPost} categories={this.props.categories} projects={this.props.projects} initialValues={initVal} />
     }
 }
 
 let mapStateToProps = (state) => {
     return {
         categories: state.category.categories,
-        projects: state.project.projects
+        projects: state.project.projects,
+        art: state.art.art
     }
 }
 
 
 
-export default connect(mapStateToProps, { getCategoriesThuncCreator, getProjects })(AdminArtContainer);
+export default connect(mapStateToProps, { getCategoriesThuncCreator, getProjects, getArt })(AdminArtContainer);
