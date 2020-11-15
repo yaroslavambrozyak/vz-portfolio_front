@@ -34,7 +34,7 @@ const artReducer = (state = initialState, action) => {
 
 const setArtData = (artData) => ({ type: SET_ART, artData });
 const setPrevArtData = (prevArtData) => ({ type: SET_PREV_ART, prevArtData });
-const setNextArtData = (nextArtData) => ({ type: SET_PREV_ART, nextArtData });
+const setNextArtData = (nextArtData) => ({ type: SET_NEXT_ART, nextArtData });
 
 
 export const getArt = (artId) => (dispatch) => {

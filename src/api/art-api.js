@@ -40,12 +40,14 @@ export const artsApi = {
     return axios.put('/arts/order', { orderedArts: orderedArtIdList });
   },
 
-  getNextArt(artId){
+  getNextArt(artId) {
     return axios.get(`/arts/${artId}/next`)
+      .then(r => r.data);
   },
 
-  getPrevArt(artId){
-    return axios.get(`/arts/${artId}/prev`);
+  getPrevArt(artId) {
+    return axios.get(`/arts/${artId}/prev`)
+      .then(r => r.data);
   }
 }
 

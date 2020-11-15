@@ -31,6 +31,7 @@
     transition: opacity 0.3s 0s;
     padding: 0 0.5em;
     text-decoration: none;
+    color: black;
 }
 
 .art_navigation_arrow:hover .art_navigation_text {
@@ -140,6 +141,7 @@
     .art {
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
+        padding-top: 15px;
     }
     .art_image {
         max-width: 100%;

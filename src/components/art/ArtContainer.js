@@ -18,7 +18,7 @@ class ArtContainer extends React.Component {
     }
 
     mapNavigationArtObject(navArt) {
-        return navArt ? { ...navArt, url: `/art/${navArt.id}` } : null;
+        return navArt?.exists ? { ...navArt, url: `/art/${navArt.id}` } : null;
     }
 
     render() {
