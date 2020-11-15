@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Style from './NavBar.module.css';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as MailIcon } from './mail_icon.svg'
@@ -8,9 +8,7 @@ import { ReactComponent as ArtStationIcon } from './artstation_icon.svg'
 
 function NavBarExposed(props) {
 
-    let categories = props.categories
-        .map(c => <NavLink onClick={props.changeNavBarOpenState}
-            className={Style.side_nav_extended_nav__link} to={`/categories/${c.name}`}>{c.name.toUpperCase()}</NavLink>)
+    let categories = props.categories.map(c => <Category changeNavBarOpenState={props.changeNavBarOpenState} category={c} />);
 
     let sideNavExtendedCssClasses = `${Style.side_nav_extended} ${props.navOpened ? Style.side_nav_extended_opened : ''}`;
 
@@ -23,7 +21,7 @@ function NavBarExposed(props) {
             <div className={Style.side_nav_extended__logo}>VLAD ZVARUN</div>
             <div className={Style.side_nav_extended_nav}>
                 {categories}
-                <NavLink onClick={props.changeNavBarOpenState}className={Style.side_nav_extended_nav__link} to='/resume'>RESUME</NavLink>
+                <NavLink onClick={props.changeNavBarOpenState} className={Style.side_nav_extended_nav__link} to='/resume'>RESUME</NavLink>
             </div>
             <div className={Style.side_nav_extended_social_icons}>
                 <a className={Style.side_nav_extended_social_icons__icon} href='mailto:vladzvarun@icloud.com'><MailIcon /></a>
@@ -33,6 +31,33 @@ function NavBarExposed(props) {
             </div>
         </div>
     </div>
+}
+
+function Category(props) {
+
+    let [open, setOpen] = useState(false);
+
+    return <div>
+        <NavLink onClick={props.changeNavBarOpenState} className={Style.side_nav_extended_nav__link}
+            to={`/categories/${props.category.name}`}>{props.category.name.toUpperCase()}</NavLink>
+        {props.category.projects?.length && <span onClick={() => setOpen(!open)}>+</span>}
+        <div className={open?Style.side_nav_extended_project_list_opened:Style.side_nav_extended_project_list_closed} ><ProjectList projects={props.category.projects} /></div>
+    </div>
+}
+
+function ProjectList(props) {
+    return (
+        <div>
+            {props.projects.map(p => {
+                return (
+                    <div>
+                        <NavLink onClick={props.changeNavBarOpenState} to={`/projects/${p.name}`}>{p.name}</NavLink>
+                    </div>
+                )
+            })}
+        </div>);
+
+
 }
 
 export default NavBarExposed;
