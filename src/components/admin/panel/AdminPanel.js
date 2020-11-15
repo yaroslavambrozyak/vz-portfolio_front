@@ -8,6 +8,7 @@ function AdminPanel(props){
         <div>
             <NavLink className={style.admin_panel_link} activeClassName={style.admin_panel_link_active} to='/admin/arts/grid'>Manage Arts</NavLink>
             <NavLink className={style.admin_panel_link} activeClassName={style.admin_panel_link_active} to='/admin/arts/create'>Add New Art</NavLink>
+            <NavLink className={style.admin_panel_link} activeClassName={style.admin_panel_link_active} to='/admin/categories'>Categories</NavLink>
         </div>
     )
 
