@@ -12,6 +12,7 @@ import AdminPanel from './components/admin/panel/AdminPanel';
 import AdminArtContainer from './components/admin/art-admin/AdminArtContainer';
 import ArtContainer from './components/art/ArtContainer';
 import AdminCategoriesContainer  from './components/admin/category/AdminCategoryContainer';
+import AdminProjectContainer from './components/admin/project/AdminProjectContainer';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path={['/admin/arts/grid']} component={GridViewContainer} />
         <Route path='/admin/arts/edit/:id' component={AdminArtContainer}/>
         <Route path='/admin/categories' component={AdminCategoriesContainer}/>
+        <Route path='/admin/projects' component={AdminProjectContainer}/>
       </Switch>
     </React.Fragment>
   );
