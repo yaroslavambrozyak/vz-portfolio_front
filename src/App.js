@@ -13,6 +13,7 @@ import AdminArtContainer from './components/admin/art-admin/AdminArtContainer';
 import ArtContainer from './components/art/ArtContainer';
 import AdminCategoriesContainer  from './components/admin/category/AdminCategoryContainer';
 import AdminProjectContainer from './components/admin/project/AdminProjectContainer';
+import AdminArtEditContainer from './components/admin/art-admin/AdminArtEditContainer';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
       <Switch>
         <Route path={'/admin/arts/create'} component={AdminArtContainer} />
         <Route path={['/admin/arts/grid']} component={GridViewContainer} />
-        <Route path='/admin/arts/edit/:id' component={AdminArtContainer}/>
+        <Route path='/admin/arts/edit/:id' component={AdminArtEditContainer}/>
         <Route path='/admin/categories' component={AdminCategoriesContainer}/>
         <Route path='/admin/projects' component={AdminProjectContainer}/>
       </Switch>

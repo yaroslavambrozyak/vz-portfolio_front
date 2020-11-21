@@ -15,14 +15,9 @@ class AdminArtContainer extends React.Component {
     componentDidMount() {
         this.props.getCategoriesThuncCreator();
         this.props.getProjects();
-        let id = this.props.match.params.id;
-        if (id) {
-            this.props.getArt(id);
-        }
     }
 
     onArtPost(e) {
-        debugger
         let payload = {
             name: e.name,
             description: e.description,
@@ -36,12 +31,7 @@ class AdminArtContainer extends React.Component {
     }
 
     render() {
-        let initVal={};
-        if (this.props.art.id != '') {
-            initVal = { ...this.props.art, category: { id: "qN2Nas", name: "other" } }
-            
-        }
-        return <AdminArt onSubmit={this.onArtPost} categories={this.props.categories} projects={this.props.projects} initialValues={initVal} />
+        return <AdminArt onSubmit={this.onArtPost} categories={this.props.categories} projects={this.props.projects}/>
     }
 }
 
@@ -52,7 +42,5 @@ let mapStateToProps = (state) => {
         art: state.art.art
     }
 }
-
-
 
 export default connect(mapStateToProps, { getCategoriesThuncCreator, getProjects, getArt })(AdminArtContainer);

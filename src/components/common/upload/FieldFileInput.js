@@ -4,11 +4,16 @@ export default class FieldFileInput extends Component {
     constructor(props) {
         super(props)
         this.onChange = this.onChange.bind(this)
+        this.state = { files: null };
     }
 
     onChange(e) {
         const { input: { onChange } } = this.props
         onChange(e.target.files)
+        let files = e.target.files;
+        let localUrls = [...files].map(f=>URL.createObjectURL(f));
+        console.log(localUrls);
+        this.setState({files: localUrls});
     }
 
     render() {
@@ -23,6 +28,9 @@ export default class FieldFileInput extends Component {
                         onChange={this.onChange}
                         multiple
                     />
+                </div>
+                <div>
+                    {this.state.files && this.state.files.map(f=><img style={{height:100 }} src={f}/>)}
                 </div>
             </div>
         )
