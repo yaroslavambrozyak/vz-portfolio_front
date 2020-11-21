@@ -22,6 +22,7 @@ class AdminArtContainer extends React.Component {
     }
 
     onArtPost(e) {
+        debugger
         let payload = {
             name: e.name,
             description: e.description,
