@@ -21,7 +21,7 @@ function NavBar(props) {
         <div className={sideNavigationCssClasses}>
             <Link to=''><img src={Logo} alt='logo' className={sideNavigationLogoCssClasses} /></Link>
             <div className={Style.side_nav_button} onClick={props.changeNavBarOpenState} >
-                <span className={Style.side_nav_button__text}>Menu</span>
+                <span className={Style.side_nav_button__text}>MENU</span>
                 <span className={Style.side_nav_button__icon}>&#9776;</span>
             </div>
             {window.innerWidth > '769px' &&

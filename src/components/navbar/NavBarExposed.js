@@ -51,7 +51,7 @@ function ProjectList(props) {
             {props.projects.map(p => {
                 return (
                     <div>
-                        <NavLink onClick={props.changeNavBarOpenState} to={`/projects/${p.name}`}>{p.name}</NavLink>
+                        <NavLink className={Style.side_nav_extended_project__link} onClick={props.changeNavBarOpenState} to={`/projects/${p.name}`}>- {p.name}</NavLink>
                     </div>
                 )
             })}

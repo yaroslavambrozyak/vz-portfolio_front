@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'MyFont';
+  src: local('MyFont'), url(./../../assets/font/EBGaramond-Regular.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Monteros';
+  src: local('Monteros'), url(./../../assets/font/Monteros.ttf) format('ttf');
+}
+
 .side_nav {
   background-color: white;
   position: fixed;
@@ -51,10 +61,15 @@
 
 .side_nav_button__text {
   margin-right: 15px;
+  font-family: MyFont;
+  font-size: 15px;
+  letter-spacing: 3px;
 }
 
 .side_nav_extended__logo {
   text-align: center;
+  font-size: 10px;
+  font-family: Monteros;
 }
 
 .side_nav_extended_nav {
@@ -63,10 +78,19 @@
 
 .side_nav_extended_nav__link {
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   color: black;
   display: inline-block;
   padding: 15px;
+  font-family: MyFont;
+  letter-spacing: 3px;
+}
+
+.side_nav_extended_project__link{
+  text-decoration: none;
+  color: black;
+  font-family: Monteros;
+  font-size: 15px;
 }
 
 .side_nav_extended_social_icons {
