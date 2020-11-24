@@ -70,7 +70,7 @@
 
 .side_nav_extended__logo {
   text-align: center;
-  font-size: 10px;
+  font-size: 20px;
   font-family: myFirstFont;
 }
 
@@ -92,7 +92,8 @@
   text-decoration: none;
   color: black;
   font-family: myFirstFont;
-  font-size: 15px;
+  font-size: 17px;
+  letter-spacing: 1px;
 }
 
 .side_nav_extended_social_icons {

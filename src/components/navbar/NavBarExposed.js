@@ -18,7 +18,7 @@ function NavBarExposed(props) {
     return <div className={sideNavExtendedCssClasses}>
         <div className={sideNavExtendedContentContainerCssClasses}>
             <span className={Style.side_nav_extended_close_button} onClick={props.changeNavBarOpenState}>&times;</span>
-            <div className={Style.side_nav_extended__logo}>Vlad Zvarun</div>
+            <div className={Style.side_nav_extended__logo} style={{marginTop:-30}}>Vlad Zvarun</div>
             <div className={Style.side_nav_extended_nav}>
                 {categories}
                 <NavLink onClick={props.changeNavBarOpenState} className={Style.side_nav_extended_nav__link} to='/resume'>RESUME</NavLink>
