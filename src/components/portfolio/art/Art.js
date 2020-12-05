@@ -10,7 +10,7 @@ function Art(props) {
         <ProgressiveImage smallResImage={props.smallImageUrl} highResImage={props.imageUrl}/>
         <div className={style.image_overlay}>
             <div className={style.image_title}>{props.name}</div>
-            <NavLink className={style.image_link} to={props.link}>VIEW</NavLink>
+            <NavLink className={style.image_link} to={props.link}><span className={style.image_link_text}>VIEW</span></NavLink>
         </div>
     </div>
 

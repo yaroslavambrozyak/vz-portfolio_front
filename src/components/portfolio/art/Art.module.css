@@ -1,13 +1,18 @@
-.image_container{
-    position: relative;
+@font-face {
+  font-family: eb;
+  src: url('./../../../assets/font/EBGaramond-Regular.ttf');
 }
 
-.image{
-    width: 100% !important;
-    height: auto !important;
+.image_container {
+  position: relative;
 }
 
-.image_overlay{
+.image {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.image_overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -17,37 +22,71 @@
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: rgba(1, 1, 1, 0.5);;
+  background-color: rgba(1, 1, 1, 0.5);
+  ;
 }
 
-
-.image_container:hover .image_overlay{
-    opacity: 1;
+.image_container:hover .image_overlay {
+  opacity: 1;
 }
 
-.image_title{
+.image_title {
   color: white;
   font-size: 20px;
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: eb;
   text-align: center;
 }
 
 .image_link{
-  color: white;
-  font-size: 20px;
+  display: inline-block;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  color: white;
   text-decoration: none;
-  transition: color .2s ease-in-out
+  bottom: 30%;
+  left:50%;
+  transform: translateX(-50%);
 }
 
-.image_link:hover{
-  color:orange;
+.image_link_text{
+  position: relative;
+  display: block;
+  cursor: pointer;
+  font-family: eb;
+  font-size: 15px;
+}
+
+.image_link_text:before, .image_link_text:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #fff;
+}
+
+.image_link_text:before {
+  left: -2.5px;
+}
+.image_link_text:after {
+  right: 2.5px;
+  background: #fff;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.image_link_text:hover:before {
+  background: #fff;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.image_link_text:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
 }
 
