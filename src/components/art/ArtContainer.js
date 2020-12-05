@@ -24,7 +24,7 @@ class ArtContainer extends React.Component {
     render() {
         return <Art images={this.props.art.images} prev={this.mapNavigationArtObject(this.props.prev)}
             next={this.mapNavigationArtObject(this.props.next)}
-            description={this.props.art.description} />
+            description={this.props.art.description} name={this.props.art.name} />
     }
 
 }

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: eb;
+    src: url('./../../assets/font/EBGaramond-Regular.ttf');
+}
+
 .art_slider {
     text-align: center;
 }
@@ -32,6 +37,7 @@
     padding: 0 0.5em;
     text-decoration: none;
     color: black;
+    font-family: eb;
 }
 
 .art_navigation_arrow:hover .art_navigation_text {
@@ -90,6 +96,8 @@
 
 .art_text{
     padding: 15px;
+    font-size: 15px;
+    font-family: eb;
 }
 
 .art_image_modal{
@@ -117,6 +125,13 @@
   z-index: 15;
 }
 
+.art_name{
+    font-family: eb;
+    font-size: 25px;
+    margin-top: 35px;
+    padding: 15px
+}
+
 .art_image_modal_img{
     max-height: 100%;
     max-width: 100%;
@@ -141,7 +156,7 @@
     .art {
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
-        padding-top: 15px;
+        padding-top: 50px;
     }
     .art_image {
         max-width: 100%;
@@ -164,5 +179,8 @@
     }
     .art_navigation {
         display: none;
+    }
+    .art {
+        padding-top: 58px;
     }
 }

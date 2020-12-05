@@ -28,8 +28,11 @@ function Art(props) {
                     </div>
                 }
             </div>
-            <div className={style.art_text}>
-                {props.description}
+            <div>
+                <div className={style.art_name}>{props.name}</div>
+                <div className={style.art_text}>
+                    {props.description}
+                </div>
             </div>
         </div>
 
