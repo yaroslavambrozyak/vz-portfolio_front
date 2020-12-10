@@ -132,7 +132,7 @@
 
 
 .side_nav_button__icon{
-  width: 18px;
+  width: 12px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -145,19 +145,19 @@
   display: block;
   height: 1.5px;
   margin: 4px 0;
-  transition: all .2s ease-in-out;
+  transition: all .4s ease-in-out;
   background-color:black;
 }
 
-.side_nav_button__icon:hover:before {
-  transform: translate(5px,10px) rotate(125deg);
+.side_nav_button:hover .side_nav_button__icon:before {
+  transform: translate(5px,8px) rotate(125deg);
 }
 
-.side_nav_button__icon:hover:after {
-  transform: translate(-7px,-4px) rotate(-125deg);
+.side_nav_button:hover .side_nav_button__icon:after {
+  transform: translate(-2px,-3px) rotate(-125deg);
 }
 
-.side_nav_button__icon:hover div {
+.side_nav_button:hover .side_nav_button__icon div {
   transform: scale(0);
 }
 
