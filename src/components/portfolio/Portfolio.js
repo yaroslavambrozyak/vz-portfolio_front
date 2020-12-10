@@ -17,7 +17,9 @@ class Portfolio extends React.Component {
     render() {
         return (
             <div>
-                <div style={this.props.isNavBarOpened ? this.styleDisplayBlock : this.styleDisplayNone} className={style.transparent_container}></div>
+                <div style={this.props.isNavBarOpened ? this.styleDisplayBlock : this.styleDisplayNone} 
+                className={style.transparent_container}
+                onClick={this.props.onTransparentContainerClick}></div>
                 <div className={style.main_container + ' ' + (
                     (window.innerWidth > 769 && this.props.preloadLogoHidden) ? style.main_container_padding_animated : '') + ' ' +
                     (window.innerWidth > 769 && this.props.isNavBarOpened ? style.main_container_disabled : '')}>

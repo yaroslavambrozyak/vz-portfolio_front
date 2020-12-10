@@ -22,6 +22,10 @@
   width: 100px;
 }
 
+.side_nav_button_transparent{
+  opacity: 0;
+}
+
 .side_nav_extended {
   position: fixed;
   background-color: white;
@@ -59,7 +63,7 @@
 }
 
 .side_nav_extended__logo{
-  left: 275px;
+  left: 218px;
 }
 
 .side_nav_button__text {
@@ -150,11 +154,11 @@
 }
 
 .side_nav_button:hover .side_nav_button__icon:before {
-  transform: translate(5px,8px) rotate(125deg);
+  transform: translate(5px,6px) rotate(125deg);
 }
 
 .side_nav_button:hover .side_nav_button__icon:after {
-  transform: translate(-2px,-3px) rotate(-125deg);
+  transform: translate(-2px,-5px) rotate(-125deg);
 }
 
 .side_nav_button:hover .side_nav_button__icon div {
@@ -178,7 +182,6 @@
   .side_nav_extended {
     height: 100%;
     top: 0;
-    left: 58px;
     width: 0;
     transition: transform 0.5s;
     overflow: hidden;

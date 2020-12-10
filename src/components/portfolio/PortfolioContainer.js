@@ -2,7 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Portfolio from './Portfolio';
 import { withRouter } from 'react-router-dom';
-import {getPortfolioArtsThunkCreator} from './../../redux/portfolio-reducer';
+import { getPortfolioArtsThunkCreator } from './../../redux/portfolio-reducer';
+import { navbarChangeOpenState } from './../../redux/navbar-reducer'
+
 
 class PortfolioContainer extends React.Component {
 
@@ -18,11 +20,12 @@ class PortfolioContainer extends React.Component {
 
     render() {
         return <Portfolio
-                arts={this.props.arts}
-                setPortfolioArts={this.props.setPortfolioArts}
-                isNavBarOpened={this.props.navbarOpened}
-                preloadLogoHidden={this.props.preloadLogoHidden}
-            />
+            arts={this.props.arts}
+            setPortfolioArts={this.props.setPortfolioArts}
+            isNavBarOpened={this.props.navbarOpened}
+            preloadLogoHidden={this.props.preloadLogoHidden}
+            onTransparentContainerClick={this.props.changeNavBarOpenState}
+        />
     }
 }
 
@@ -35,8 +38,9 @@ let mapStateToProps = (state) => {
     }
 }
 
+let mapDispatchToProps = (dispatch) => ({
+    getPortfolioArtsThunkCreator: () => dispatch(getPortfolioArtsThunkCreator()),
+    changeNavBarOpenState: () => dispatch(navbarChangeOpenState())
+});
 
-
-export default withRouter(connect(mapStateToProps, 
-    {getPortfolioArtsThunkCreator}
-    )(PortfolioContainer));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PortfolioContainer));
