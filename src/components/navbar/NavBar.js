@@ -21,8 +21,10 @@ function NavBar(props) {
         <div className={sideNavigationCssClasses}>
             <Link to=''><img src={Logo} alt='logo' className={sideNavigationLogoCssClasses} /></Link>
             <div className={Style.side_nav_button} onClick={props.changeNavBarOpenState} >
-                <span className={Style.side_nav_button__text}>MENU</span>
-                <span className={Style.side_nav_button__icon}>&#9776;</span>
+                <div className={Style.side_nav_button__text}>MENU</div>
+                <div className={Style.side_nav_button__icon}>
+                    <div></div>
+                </div>
             </div>
             {window.innerWidth > '769px' &&
                 <span style={scrollTopButtonStyle} className={Style.side_nav_scroll_top_button} onClick={onScrollTopButtonClick}></span>

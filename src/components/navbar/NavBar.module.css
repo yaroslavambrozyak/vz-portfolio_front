@@ -19,6 +19,7 @@
 .side_nav_button {
   position: absolute;
   cursor: pointer;
+  width: 100px;
 }
 
 .side_nav_extended {
@@ -66,6 +67,8 @@
   font-family: eb;
   font-size: 15px;
   letter-spacing: 3px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .side_nav_extended__logo {
@@ -125,6 +128,37 @@
 .side_nav_extended_project_list_opened{
   max-height: 100vh;
   transition: max-height 0.55s ease-in;
+}
+
+
+.side_nav_button__icon{
+  width: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.side_nav_button__icon:after, 
+.side_nav_button__icon:before, 
+.side_nav_button__icon div {
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 1.5px;
+  margin: 4px 0;
+  transition: all .2s ease-in-out;
+  background-color:black;
+}
+
+.side_nav_button__icon:hover:before {
+  transform: translate(5px,10px) rotate(125deg);
+}
+
+.side_nav_button__icon:hover:after {
+  transform: translate(-7px,-4px) rotate(-125deg);
+}
+
+.side_nav_button__icon:hover div {
+  transform: scale(0);
 }
 
 @media (min-width: 769px) {
